@@ -1,0 +1,101 @@
+<h3 id="edityoursignature">Edit your signature</h3>
+<form id="signatureForm">
+  <script>
+    function changeName() {
+      document.getElementById('signatureName').innerHTML = document.querySelector('#signatureForm input[name=name]').value;
+    }
+    function changeEmail() {
+      email = document.querySelector('#signatureForm input[name=email]').value;
+      document.getElementById('signatureEmail').innerHTML = email;
+      document.getElementById('signatureEmail').setAttribute("href", "mailto:" + email.replace(/\s/g, ''));
+    }
+    function changeJob() {
+      document.getElementById('signatureJob').innerHTML = document.querySelector('#signatureForm input[name=job]').value;
+    }
+    function getFrTel() {
+      return "+33 " + document.querySelector('#signatureForm input[name=frTel]').value;
+    }
+    function getUkTel() {
+      return "+44 " + document.querySelector('#signatureForm input[name=ukTel]').value;
+    }
+    function displayCountry() {
+      document.querySelector("#signatureFrTelGroup .country").style.display = "initial"
+      document.querySelector("#signatureUkTelGroup .country").style.display = "initial"
+    }
+    function hideCountry() {
+      document.querySelector("#signatureFrTelGroup .country").style.display = "none"
+      document.querySelector("#signatureUkTelGroup .country").style.display = "none"
+    }
+    function changeTel() {
+      frTel = getFrTel();
+      ukTel = getUkTel();
+
+      document.getElementById('signatureFrTel').innerHTML = frTel;
+      document.getElementById('signatureFrTel').setAttribute("href", "tel:" + frTel.replace(/\s/g, ''));
+      document.getElementById('signatureUkTel').innerHTML = ukTel;
+      document.getElementById('signatureUkTel').setAttribute("href", "tel:" + ukTel.replace(/\s/g, ''));
+
+      if(frTel.length > 4) {
+        document.getElementById("signatureFrTelGroup").style.display = "initial";
+      }
+      if(ukTel.length > 4) {
+        document.getElementById("signatureUkTelGroup").style.display = "initial";
+      }
+      if(frTel.length > 4 && ukTel.length > 4) {
+        displayCountry();
+      }
+      if(frTel.length === 4) {
+        document.getElementById("signatureFrTelGroup").style.display = "none";
+        hideCountry();
+      }
+      if(ukTel.length === 4) {
+        document.getElementById("signatureUkTelGroup").style.display = "none";
+        hideCountry();
+      }
+    }
+
+    function displayCode() {
+      var code = document.getElementById("signature").innerHTML;
+      code = code.replace(/&/g, '&amp;');
+      code = code.replace(/</g, '&lt;');
+      code = code.replace(/>/g, '&gt;');
+      document.getElementById("signatureCode").innerHTML = code;
+    }
+  </script>
+  Name: <input type="text" name="name" oninput="changeName()"/><br/>
+  Email: <input type="email" name="email" oninput="changeEmail()"/><br/>
+  Job Title: <input type="text" name="job" oninput="changeJob()"/><br/>
+  French Tel: +33 <input type="tel" name="frTel" oninput="changeTel()" onblur="changeTel()"/><br/>
+  UK Tel: +44 <input type="tel" name="ukTel" oninput="changeTel()" onblur="changeTel()"/><br/>
+
+  <div id="signature">
+    <table border="0" style="border-collapse:collapse;margin:15px;border:0px;font-family:verdana,arial,sans-serif;">
+      <tbody style="color: rgb(102,102,102);font-size: 11px;line-height: 14px;">
+        <tr style="vertical-align: baseline;">
+          <td style="text-align: right;padding: 0 10px 10px 0;">
+            <h1 style="font-size: 28px;font-weight: bold;letter-spacing: 1px;margin: 0;padding: 0;"><span style="color:rgb(40,89,162)">Theo</span><span style="color:rgb(111,194,183)">do</span></h1>
+          </td>
+          <td>
+            <h2 style="font-size: 18px;font-weight: bold;color: rgb(111,194,183);margin: 0;padding: 0;" id="signatureName">Your Name</h2>
+          </td>
+        </tr>
+        <tr style="vertical-align: top;">
+          <td style="text-align: right;padding-right: 10px;">
+            <p>48 bd des Batignolles<br>75017 PARIS<br><a style="color: rgb(40,89,162);text-decoration: none;" href="http://www.theodo.fr/" target="_blank">www.theodo.fr</a></p>
+          </td>
+          <td >
+            <p>
+              <span id="signatureJob">Web Developer</span>
+              <span id="signatureFrTelGroup"><br><span style="display:none;" class="country">FR: </span><a style="color: rgb(40,89,162);text-decoration: none;" href="tel:+33612345678" id="signatureFrTel">+33 6 12 34 56 78</a></span>
+              <span id="signatureUkTelGroup" style="display:none;"><br><span style="display:none;" class="country">UK: </span><a style="color: rgb(40,89,162);text-decoration: none;" id="signatureUkTel"></a></span>
+              <br><a style="color: rgb(40,89,162);text-decoration: none;" href="mailto:yourn@theodo.fr" target="_blank" id="signatureEmail">yourn@theodo.fr</a>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <input type="button" value="See Signature Code" onclick="displayCode()"/>
+  <pre style="background-color: grey"><code id="signatureCode"></code></pre>
+</form>
