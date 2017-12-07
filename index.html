@@ -1,101 +1,149 @@
-<h3 id="edityoursignature">Edit your signature</h3>
-<form id="signatureForm">
-  <script>
-    function changeName() {
-      document.getElementById('signatureName').innerHTML = document.querySelector('#signatureForm input[name=name]').value;
-    }
-    function changeEmail() {
-      email = document.querySelector('#signatureForm input[name=email]').value;
-      document.getElementById('signatureEmail').innerHTML = email;
-      document.getElementById('signatureEmail').setAttribute("href", "mailto:" + email.replace(/\s/g, ''));
-    }
-    function changeJob() {
-      document.getElementById('signatureJob').innerHTML = document.querySelector('#signatureForm input[name=job]').value;
-    }
-    function getFrTel() {
-      return "+33 " + document.querySelector('#signatureForm input[name=frTel]').value;
-    }
-    function getUkTel() {
-      return "+44 " + document.querySelector('#signatureForm input[name=ukTel]').value;
-    }
-    function displayCountry() {
-      document.querySelector("#signatureFrTelGroup .country").style.display = "initial"
-      document.querySelector("#signatureUkTelGroup .country").style.display = "initial"
-    }
-    function hideCountry() {
-      document.querySelector("#signatureFrTelGroup .country").style.display = "none"
-      document.querySelector("#signatureUkTelGroup .country").style.display = "none"
-    }
-    function changeTel() {
-      frTel = getFrTel();
-      ukTel = getUkTel();
+<script>
+  function changeName() {
+    document.getElementById('signatureName').innerHTML = document.querySelector('input[name=name]').value;
+  }
+  function changeJob() {
+    document.getElementById('signatureJob').innerHTML = document.querySelector('input[name=job]').value;
+  }
+  function getFrTel() {
+    return "+33 " + document.querySelector('input[name=frTel]').value;
+  }
+  function getUkTel() {
+    return "+44 " + document.querySelector('input[name=ukTel]').value;
+  }
+  function displayCountry() {
+    document.querySelector("#signatureFrTelGroup .country").style.display = "initial"
+    document.querySelector("#signatureUkTelGroup .country").style.display = "initial"
+  }
+  function hideCountry() {
+    document.querySelector("#signatureFrTelGroup .country").style.display = "none"
+    document.querySelector("#signatureUkTelGroup .country").style.display = "none"
+  }
+  function changeTel() {
+    frTel = getFrTel();
+    ukTel = getUkTel();
 
-      document.getElementById('signatureFrTel').innerHTML = frTel;
-      document.getElementById('signatureFrTel').setAttribute("href", "tel:" + frTel.replace(/\s/g, ''));
-      document.getElementById('signatureUkTel').innerHTML = ukTel;
-      document.getElementById('signatureUkTel').setAttribute("href", "tel:" + ukTel.replace(/\s/g, ''));
+    document.getElementById('signatureFrTel').innerHTML = frTel;
+    document.getElementById('signatureFrTel').setAttribute("href", "tel:" + frTel.replace(/\s/g, ''));
+    document.getElementById('signatureUkTel').innerHTML = ukTel;
+    document.getElementById('signatureUkTel').setAttribute("href", "tel:" + ukTel.replace(/\s/g, ''));
 
-      if(frTel.length > 4) {
-        document.getElementById("signatureFrTelGroup").style.display = "initial";
-      }
-      if(ukTel.length > 4) {
-        document.getElementById("signatureUkTelGroup").style.display = "initial";
-      }
-      if(frTel.length > 4 && ukTel.length > 4) {
-        displayCountry();
-      }
-      if(frTel.length === 4) {
-        document.getElementById("signatureFrTelGroup").style.display = "none";
-        hideCountry();
-      }
-      if(ukTel.length === 4) {
-        document.getElementById("signatureUkTelGroup").style.display = "none";
-        hideCountry();
-      }
+    if(frTel.length > 4) {
+      document.getElementById("signatureFrTelGroup").style.display = "block";
     }
-
-    function displayCode() {
-      var code = document.getElementById("signature").innerHTML;
-      code = code.replace(/&/g, '&amp;');
-      code = code.replace(/</g, '&lt;');
-      code = code.replace(/>/g, '&gt;');
-      document.getElementById("signatureCode").innerHTML = code;
+    if(ukTel.length > 4) {
+      document.getElementById("signatureUkTelGroup").style.display = "block";
     }
-  </script>
-  Name: <input type="text" name="name" oninput="changeName()"/><br/>
-  Email: <input type="email" name="email" oninput="changeEmail()"/><br/>
-  Job Title: <input type="text" name="job" oninput="changeJob()"/><br/>
-  French Tel: +33 <input type="tel" name="frTel" oninput="changeTel()" onblur="changeTel()"/><br/>
-  UK Tel: +44 <input type="tel" name="ukTel" oninput="changeTel()" onblur="changeTel()"/><br/>
+    if(frTel.length > 4 && ukTel.length > 4) {
+      displayCountry();
+    }
+    if(frTel.length === 4) {
+      document.getElementById("signatureFrTelGroup").style.display = "none";
+      hideCountry();
+    }
+    if(ukTel.length === 4) {
+      document.getElementById("signatureUkTelGroup").style.display = "none";
+      hideCountry();
+    }
+  }
 
-  <div id="signature">
-    <table border="0" style="border-collapse:collapse;margin:15px;border:0px;">
-      <tbody style="color: rgb(102,102,102);font-size: 8pt;line-height: 10pt;">
-        <tr style="vertical-align: baseline;">
-          <td style="text-align: right;padding: 0 8pt 8pt 0; font-family:sans-serif;">
-            <h1 style="font-size: 20pt;font-weight: bold;letter-spacing: 1pt;margin: 0;padding: 0;"><span style="color:#24539B">Theo</span><span style="color:#7CBBA1">do</span></h1>
-          </td>
-          <td style="font-family:sans-serif;">
-            <h2 style="font-size: 13pt;font-weight: bold;color: #7CBBA1;margin: 0;padding: 0;" id="signatureName">Your Name</h2>
-          </td>
-        </tr>
-        <tr style="vertical-align: top;">
-          <td style="text-align: right;padding-right: 8pt; font-family:sans-serif;">
-            <p style="margin: 0">48 bd des Batignolles<br>75017 PARIS<br><a style="color: #24539B;text-decoration: none;" href="http://www.theodo.fr/" target="_blank">www.theodo.fr</a></p>
-          </td>
-          <td style="font-family:sans-serif;">
-            <p style="margin: 0">
-              <span id="signatureJob">Web Developer</span>
-              <span id="signatureFrTelGroup"><br><span style="display:none;" class="country">FR: </span><a style="color: #24539B;text-decoration: none;" href="tel:+33612345678" id="signatureFrTel">+33 6 12 34 56 78</a></span>
-              <span id="signatureUkTelGroup" style="display:none;"><br><span style="display:none;" class="country">UK: </span><a style="color: #24539B;text-decoration: none;" id="signatureUkTel"></a></span>
-              <br><a style="color: #24539B;text-decoration: none;" href="mailto:yourn@theodo.fr" target="_blank" id="signatureEmail">yourn@theodo.fr</a>
-            </p>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  function displayCode() {
+    var code = document.getElementById("signature").innerHTML;
+    code = code.replace(/&/g, '&amp;');
+    code = code.replace(/</g, '&lt;');
+    code = code.replace(/>/g, '&gt;');
+    document.getElementById("signatureCode").innerHTML = code;
+  }
 
-  <input type="button" value="See Signature Code" onclick="displayCode()"/>
-  <pre style="background-color: grey"><code id="signatureCode"></code></pre>
-</form>
+  function selectContent(elId) {
+    var el = document.getElementById(elId);
+    var body = document.body, range, sel;
+    if (document.createRange && window.getSelection) {
+      range = document.createRange();
+      sel = window.getSelection();
+      sel.removeAllRanges();
+      try {
+        range.selectNodeContents(el);
+      } catch (e) {
+        range.selectNode(el);
+      }
+      sel.addRange(range);
+      document.execCommand("copy");
+    } else if (body.createTextRange) {
+      range = body.createTextRange();
+      range.moveToElementText(el);
+      range.select();
+      range.execCommand("Copy");
+    }
+  }
+</script>
+
+<h3>Edit your signature</h3>
+
+<table style="margin: 0 50px; display: inline-block; vertical-align: middle;">
+  <tr>
+    <td>Name</td><td style="text-align: right;"><input type="text" name="name" oninput="changeName()"/></td>
+  </tr>
+  <tr>
+    <td>Job Title</td><td style="text-align: right;"><input type="text" name="job" oninput="changeJob()"/></td>
+  </tr>
+  <tr>
+    <td>French Tel</td><td>+33 <input type="tel" name="frTel" oninput="changeTel()" onblur="changeTel()"/></td>
+  </tr>
+  <tr>
+    <td>UK Tel</td><td>+44 <input type="tel" name="ukTel" oninput="changeTel()" onblur="changeTel()"/></td>
+  </tr>
+</table>
+
+<div id="signature" style="display: inline-block; vertical-align: middle;">
+  <table style="height: 90px; font-family:sans-serif; color: rgb(102,102,102); font-size: 11px;">
+    <tbody>
+      <tr>
+        <td><a href="https://www.theodo.fr" target="_blank"><img src="https://www.theodo.fr/hs-fs/hubfs/theodologo-ConvertImage.png?t=1512551767947&width=574&name=theodologo-ConvertImage.png" style="height: 90px; vertical-align: middle;" alt="Theodo"/></a></td>
+        <td>
+          <span style="display:inline-block; margin-left: 10px; vertical-align: middle;">
+            <h2 id="signatureName" style="font-size: 18px; font-weight: bold; margin: 0; padding: 0; color: rgb(40,90,162);">Benoît Charles-Lavauzelle</h2>
+            <div id="signatureJob" style="font-size: 16px; color: rgb(111,194,183); margin-bottom: 10px;">Cofounder</div>
+            <div id="signatureFrTelGroup"><span class="country" style="display: none;">FR </span><a style="color: rgb(40,90,162);" href="tel:+33612345678" id="signatureFrTel">+33 6 12 34 56 78</a></div>
+            <div id="signatureUkTelGroup" style="display: none;"><span class="country" style="display: none;">UK </span><a style="color: rgb(40,90,162);" id="signatureUkTel"></a></div>
+            <div style="margin-top: 2px;">48 bd des Batignolles</br>75017 Paris</div>
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div style="font-size: 20px; max-width: 800px;">
+  <h3>Gmail</h3>
+  <ol>
+    <li>Go to <a href="https://mail.google.com/mail/u/0/#settings/general" target="_blank">Gmail settings</a></li>
+    <li>Remove everything from the signature field (Cmd + a, delete)</li>
+    <li><input style="" type="button" value="Copy" onclick="selectContent('signature'); this.style.color = 'green';"/> and paste your signature</li>
+    <li>Save your changes</li>
+  </ol>
+
+  <h3>Apple Mail</h3>
+  <ol>
+    <li><input type="checkbox"/> In Mail, open the Preference pane &gt; Signatures tab</li>
+    <li><input type="checkbox"/> Add a signature to your Theodo account by clicking on the + button. (The content of the signature does not matter).</li>
+    <li><input type="checkbox"/> Close the Preference pane to save the signature</li>
+    <li><input type="checkbox"/> In your finder, press Cmd + G, and go to ~/Library/Mail</li>
+    <li><input type="checkbox"/> In the open folder, there should be a folder starting with 'V' ('V2, 'V3', 'V4') depending on your version of Mac OS. Open this folder, then MailData then Signatures</li>
+    <li><input type="checkbox"/> In the list of files with extension <em>.mailsignature</em>, find the signature you just added (find it by date of creation if needed)</li>
+    <li><input type="checkbox"/> Open this signature file with TextEdit and remove the second part as in the picture<br/>
+      <img src="Signature-edit.png" alt="" width="300" height="193" /></li>
+    <li><input type="button" value="Copy" onclick="displayCode(); selectContent('signatureCode'); this.style.color = 'green'; document.getElementById('signatureCode').style.display = 'none';"/> and paste the signature code in the file</li>
+    <li><input type="checkbox"/> Save and close the file</li>
+    <li><input type="checkbox"/> Open the file information panel (Cmd + i on file highlighted) and lock the file to prevent Mail from erasing your signature</li>
+    <li><input type="checkbox"/> Restart Mail</li>
+  </ol>
+
+  <h3>Adding your signature to Mail on iOS</h3>
+  <ol>
+    <li>Send yourself an email with your signature correctly formatted and, on your iPhone, copy it carefully (or <input style="" type="button" value="Copy signature" onclick="selectContent('signature'); this.style.color = 'green';"/>)</li>
+    <li>Navigate to Settings/Mail/Signature and paste it. The signature will appear unformated, so <strong>shake your iPhone</strong> to undo automatic modifications. It should now appear correctly.</li>
+    <li>You can quit your settings and write a new mail to test everything works fine.</li>
+  </ol>
+</div>
+<pre style="background-color: grey;"><code id="signatureCode"></code></pre>
