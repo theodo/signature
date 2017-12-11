@@ -87,6 +87,7 @@
 
   function useJob(jobId) {
     document.getElementById('signatureJob').innerHTML = document.getElementById(jobId).innerHTML;
+    document.querySelector('[name="job"]').value = document.getElementById(jobId).innerHTML;
   }
 </script>
 
