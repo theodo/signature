@@ -93,6 +93,13 @@
 
 <h3>Edit your signature</h3>
 
+<em style="display: block;">1 : Standard job titles include
+  <ul style="margin-top: 0;">
+    <li><span id="jobBizDev">Agile coach & Business Developer</span> <button onclick="useJob('jobBizDev')">Use it</button></li>
+    <li><span id="jobWebDev">Agile web developer</span> <button onclick="useJob('jobWebDev')">Use it</button></li>
+  </ul>
+</em>
+<br/>
 <table style="margin: 0 50px; display: inline-block; vertical-align: middle;">
   <tr>
     <td>Firstname + Name</td><td style="text-align: right;"><input type="text" name="name" oninput="changeName()"/></td>
@@ -129,12 +136,6 @@
 </div>
 <br/>
 <br/>
-<em style="display: block;">1 : Standard job titles include
-  <ul style="margin-top: 0;">
-    <li><span id="jobBizDev">Agile coach & Business Developer</span> <button onclick="useJob('jobBizDev')">Use it</button></li>
-    <li><span id="jobWebDev">Agile web developer</span> <button onclick="useJob('jobWebDev')">Use it</button></li>
-  </ul>
-</em>
 
 <div style="font-size: 20px; max-width: 800px;">
   <h3>Gmail</h3>
@@ -148,6 +149,14 @@
       </ul>
     </li>
     <li>Refresh all your Gmail tabs</li>
+  </ol>
+
+  <h3>Hubspot</h3>
+  <ol>
+    <li>Fill the form !</li>
+    <li>Dans Hubspot, Profile > Preferences > Edit Signature > Onglet HTML</li>
+    <li><input type="button" value="Copy" onclick="displayCode(); selectContent('signatureCode'); this.style.color = 'green'; document.getElementById('signatureCode').style.display = 'none';"/> and paste the signature code in the textarea</li>
+    <li>Save</li>
   </ol>
 
   <h3>Apple Mail</h3>
