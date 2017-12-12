@@ -3,7 +3,8 @@
     document.getElementById('signatureName').innerHTML = document.querySelector('input[name=name]').value;
   }
   function changeJob() {
-    document.getElementById('signatureJob').innerHTML = document.querySelector('input[name=job]').value;
+    var e = document.querySelector('select[name=job]');
+    document.getElementById('signatureJob').innerHTML = e.options[e.selectedIndex].text;
   }
   function getFormattedUkTel() {
     return "+44 " + document.querySelector('input[name=ukTel]').value;
@@ -84,37 +85,40 @@
       range.execCommand("Copy");
     }
   }
-
-  function useJob(jobId) {
-    document.getElementById('signatureJob').innerHTML = document.getElementById(jobId).innerHTML;
-    document.querySelector('[name="job"]').value = document.getElementById(jobId).innerHTML;
-  }
 </script>
 
 <h3>Edit your signature</h3>
-
-<em style="display: block;">1 : Standard job titles include
-  <ul style="margin-top: 0;">
-    <li><span id="jobBizDev">Agile coach & Business Developer</span> <button onclick="useJob('jobBizDev')">Use it</button></li>
-    <li><span id="jobWebDev">Agile web developer</span> <button onclick="useJob('jobWebDev')">Use it</button></li>
-  </ul>
-</em>
 <br/>
 <table style="margin: 0 50px; display: inline-block; vertical-align: middle;">
   <tr>
-    <td>Firstname + Name</td><td style="text-align: right;"><input type="text" name="name" oninput="changeName()"/></td>
+    <td>Firstname + Name</td><td style="text-align: right;"><input type="text" name="name" oninput="changeName()" style="width: 227px;"/></td>
   </tr>
   <tr>
-    <td>Job Title<sup style="font-size: x-small;">1</sup></td><td style="text-align: right;"><input type="text" name="job" oninput="changeJob()"/></td>
+    <td>Job Title</td>
+    <td style="text-align: right; width: 227px;">
+      <select name="job" onchange="changeJob()">
+        <option></option>
+        <option>Agile web developer</option>
+        <option>Architect developer</option>
+        <option>Agile coach</option>
+        <option>Project Director</option>
+        <option>Operations and finance & Agile coach</option>
+        <option>Cofounder</option>
+        <option>CTO</option>
+        <option>CEO</option>
+        <option>Chief Sales Officer</option>
+        <option>Chief Growth Officer</option>
+        <option>Deputy CTO</option>
+      </select>
+    </td>
   </tr>
   <tr>
-    <td>French Tel</td><td>+33 <input type="tel" name="frTel" oninput="changeTel()" onblur="changeTel()"/></td>
+    <td>French Tel</td><td>+33 <input type="tel" name="frTel" oninput="changeTel()" onblur="changeTel()" style="width: 227px;"/></td>
   </tr>
   <tr>
-    <td>UK Tel</td><td>+44 <input type="tel" name="ukTel" oninput="changeTel()" onblur="changeTel()"/></td>
+    <td>UK Tel</td><td>+44 <input type="tel" name="ukTel" oninput="changeTel()" onblur="changeTel()" style="width: 227px;"/></td>
   </tr>
 </table>
-
 
 <div id="signature" style="display: inline-block; vertical-align: middle;">
   <table style="height: 90px; font-family:sans-serif; color: rgb(102,102,102); font-size: 11px;">
