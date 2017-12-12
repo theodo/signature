@@ -138,62 +138,89 @@
 <br/>
 <br/>
 
-<div style="font-size: 20px; max-width: 800px;">
-  <h3>Gmail</h3>
-  <ol>
-    <li>Fill the form !</li>
-    <li>Go to <a href="https://mail.google.com/mail/u/0/#settings/general" target="_blank">Gmail settings</a> or go to Inbox settings if you use Inbox
-      <ul>
-        <li><input style="" type="button" value="Copy" onclick="selectContent('signature'); this.style.color = 'green';"/> and paste your signature</li>
-        <li style="color: red;">Check the box below the signature</li>
-        <li>Save your changes</li>
-      </ul>
-    </li>
-    <li>Refresh all your Gmail tabs</li>
-  </ol>
+<table style="border-collapse: collapse; border-top: 1px solid grey; border-bottom: 1px solid grey;">
+  <tr>
+    <td><h3>Gmail</h3></td>
+    <td>
+      <ol style="display: inline-block; vertical-align: middle;">
+        <li>Fill the form !</li>
+        <li><input style="" type="button" value="Copy your signature" onclick="selectContent('signature'); this.style.color = 'green';"/></li>
+        <li>In your <a href="https://mail.google.com/mail/u/0/#settings/general" target="_blank">Gmail settings</a>, you will have to :
+          <ol>
+            <li>Paste your signature</li>
+            <li><strong style="color: red;">Check</strong> the box below the signature</li>
+            <li><strong style="color: red;">Save</strong> your changes</li>
+          </ol>
+        </li>
+        <li><strong style="color: red;">Refresh</strong> all your Gmail tabs</li>
+      </ol>
+      <img src="gmail.png" style="max-height: 400px; max-width: 600px; vertical-align: middle;"/>
+    </td>
+  </tr>
+  <tr style="border-top: 1px solid grey;">
+    <td><h3>Inbox</h3></td>
+    <td>
+      <ol>
+        <li>Fill the form !</li>
+        <li><input style="" type="button" value="Copy your signature" onclick="selectContent('signature'); this.style.color = 'green';"/></li>
+        <li>Paste it in your Inbox settings</li>
+        <li><strong style="color: red;">Refresh</strong> all your Inbox tabs</li>
+      </ol>
+    </td>
+  </tr>
+  <tr style="border-top: 1px solid grey;">
+    <td><h3>Hubspot</h3></td>
+    <td>
+      <ol style="display: inline-block; vertical-align: middle;">
+        <li>Fill the form !</li>
+        <li><input type="button" value="Copy your signature's code" onclick="displayCode(); selectContent('signatureCode'); this.style.color = 'green'; document.getElementById('signatureCode').style.display = 'none';"/></li>
+        <li>Paste it in Hubspot, Profile & Preferences > Edit Signature > HTML tab</li>
+        <li>Save</li>
+      </ol>
+      <img src="hubspot.jpeg" style="max-height: 400px; max-width: 600px; vertical-align: middle;"/>
+    </td>
+  </tr>
+  <tr style="border-top: 1px solid grey;">
+    <td><h3>Mail on OSX</h3></td>
+    <td>
+      <ol style="display: inline-block; vertical-align: middle; max-width: 400px;">
+        <li>Fill the form !</li>
+        <li><input type="button" value="Copy your signature's code" onclick="displayCode(); selectContent('signatureCode'); this.style.color = 'green'; document.getElementById('signatureCode').style.display = 'none';"/></li>
+        <li>In Mail
+          <ul style="list-style:square;">
+            <li><input type="checkbox"/> Open the Preference pane &gt; Signatures tab</li>
+            <li><input type="checkbox"/> Add a signature to your Theodo account by clicking on the + button. (The content of the signature does not matter).</li>
+            <li><input type="checkbox"/> <strong style="color: red;">Close</strong> the Preference pane to save the signature</li>
+          </ul>
+        </li>
+        <li>In your finder
+          <ul style="list-style:square;">
+            <li><input type="checkbox"/> Press Cmd + G, and go to ~/Library/Mail</li>
+            <li><input type="checkbox"/> In the open folder, there should be a folder starting with 'V' ('V2, 'V3', 'V4') depending on your version of Mac OS. Open this folder, then MailData then Signatures</li>
+            <li><input type="checkbox"/> In the list of files with extension <em>.mailsignature</em>, find the signature you just added (find it by date of creation if needed)</li>
+            <li><input type="checkbox"/> Open this signature file with TextEdit and remove the second part as in the picture</li>
+            <li> Paste the signature's code in the file</li>
+            <li><input type="checkbox"/> Save and close the file</li>
+            <li><input type="checkbox"/> Open the file information panel (Cmd + i on file highlighted) and <strong style="color: red;">lock</strong> the file to prevent Mail from erasing your signature</li>
+          </ul>
+        </li>
+        <li><strong style="color: red;">Restart Mail</strong></li>
+      </ol>
+      <img src="appleMail.png" style="max-height: 400px; max-width: 600px; vertical-align: middle;"/>
+    </td>
+  </tr>
+  <tr style="border-top: 1px solid grey;">
+    <td><h3>Mail on iOS</h3></td>
+    <td>
+      <ol>
+        <li>Fill the form !</li>
+        <li><input style="" type="button" value="Copy your signature" onclick="selectContent('signature'); this.style.color = 'green';"/></li>
+        <li>Paste it to Settings/Mail/Signature.</li>
+        <li>The signature will appear unformated, so <strong style="color: red;">shake your iPhone</strong> to undo automatic modifications. It should now appear correctly.</li>
+        <li>Just quit your settings</li>
+      </ol>
+    </td>
+  </tr>
+</table>
 
-  <h3>Hubspot</h3>
-  <ol>
-    <li>Fill the form !</li>
-    <li>
-      Dans Hubspot, Profile & Preferences > Edit Signature > Onglet HTML
-      <img src="hubspot.jpeg" width="80%"/>
-    </li>
-    <li><input type="button" value="Copy" onclick="displayCode(); selectContent('signatureCode'); this.style.color = 'green'; document.getElementById('signatureCode').style.display = 'none';"/> and paste the signature code in the textarea</li>
-    <li>Save</li>
-  </ol>
-
-  <h3>Apple Mail</h3>
-  <ol>
-    <li>Fill the form !</li>
-    <li>In Mail
-      <ul style="list-style:square;">
-        <li><input type="checkbox"/> Open the Preference pane &gt; Signatures tab</li>
-        <li><input type="checkbox"/> Add a signature to your Theodo account by clicking on the + button. (The content of the signature does not matter).</li>
-        <li><input type="checkbox"/> Close the Preference pane to save the signature</li>
-      </ul>
-    </li>
-    <li>In your finder
-      <ul style="list-style:square;">
-        <li><input type="checkbox"/> Press Cmd + G, and go to ~/Library/Mail</li>
-        <li><input type="checkbox"/> In the open folder, there should be a folder starting with 'V' ('V2, 'V3', 'V4') depending on your version of Mac OS. Open this folder, then MailData then Signatures</li>
-        <li><input type="checkbox"/> In the list of files with extension <em>.mailsignature</em>, find the signature you just added (find it by date of creation if needed)</li>
-        <li><input type="checkbox"/> Open this signature file with TextEdit and remove the second part as in the picture<br/>
-          <img src="Signature-edit.png" alt="" width="300" height="193" /></li>
-        <li><input type="button" value="Copy" onclick="displayCode(); selectContent('signatureCode'); this.style.color = 'green'; document.getElementById('signatureCode').style.display = 'none';"/> and paste the signature code in the file</li>
-        <li><input type="checkbox"/> Save and close the file</li>
-        <li><input type="checkbox"/> Open the file information panel (Cmd + i on file highlighted) and lock the file to prevent Mail from erasing your signature</li>
-      </ul>
-    </li>
-    <li>Restart Mail</li>
-  </ol>
-
-  <h3>Adding your signature to Mail on iOS</h3>
-  <ol>
-    <li>Fill the form !</li>
-    <li>Send yourself an email with your signature correctly formatted and, on your iPhone, copy it carefully (or <input style="" type="button" value="Copy signature" onclick="selectContent('signature'); this.style.color = 'green';"/>)</li>
-    <li>Navigate to Settings/Mail/Signature and paste it. The signature will appear unformated, so <strong>shake your iPhone</strong> to undo automatic modifications. It should now appear correctly.</li>
-    <li>You can quit your settings and write a new mail to test everything works fine.</li>
-  </ol>
-</div>
 <pre style="background-color: grey;"><code id="signatureCode"></code></pre>
