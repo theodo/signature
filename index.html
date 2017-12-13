@@ -9,50 +9,76 @@
   function getFormattedUkTel() {
     return "+44 " + document.querySelector('input[name=ukTel]').value;
   }
-  function displayCountry() {
-    document.querySelector("#signatureFrTelGroup .country").style.display = "initial"
-    document.querySelector("#signatureUkTelGroup .country").style.display = "initial"
-  }
   function hideCountry() {
     document.querySelector("#signatureFrTelGroup .country").style.display = "none"
     document.querySelector("#signatureUkTelGroup .country").style.display = "none"
+    document.querySelector("#signatureMarocTelGroup .country").style.display = "none"
   }
+
+  function formatTel(telNoSpace) {
+    var formattedInput = '';
+    for(var i = 0; i<telNoSpace.length; i++) {
+      if((i % 2) === 1) {
+        formattedInput += ' ';
+      }
+      formattedInput += telNoSpace.charAt(i);
+    }
+    return formattedInput;
+  }
+
   function changeTel() {
+    var countries  = [];
+
+    // french tel
     var userInputFr = document.querySelector('input[name=frTel]').value;
     var frTelNoSpace = userInputFr.replace(/\D/g, '')
-    var formattedInputFr = '';
-    for(var i = 0; i<frTelNoSpace.length; i++) {
-      if((i % 2) === 1) {
-        formattedInputFr += ' ';
-      }
-      formattedInputFr += frTelNoSpace.charAt(i);
-    }
+    var formattedInputFr = formatTel(frTelNoSpace);
     document.querySelector('input[name=frTel]').value = formattedInputFr;
     document.getElementById('signatureFrTel').innerHTML = '+33 ' + formattedInputFr;
     document.getElementById('signatureFrTel').setAttribute("href", "tel:+33" + frTelNoSpace);
+    if (formattedInputFr.length > 0) {
+      document.getElementById("signatureFrTelGroup").style.display = "block";
+      countries.push('#signatureFrTelGroup');
+    } else {
+      document.getElementById("signatureFrTelGroup").style.display = "none";
+    }
 
+    // maroc tel
+    var userInputMaroc = document.querySelector('input[name=marocTel]').value;
+    var marocTelNoSpace = userInputMaroc.replace(/\D/g, '')
+    var formattedInputMaroc = formatTel(marocTelNoSpace);
+    document.querySelector('input[name=marocTel]').value = formattedInputMaroc;
+    document.getElementById('signatureMarocTel').innerHTML = '+212 ' + formattedInputMaroc;
+    document.getElementById('signatureMarocTel').setAttribute("href", "tel:+212" + marocTelNoSpace);
+    if (formattedInputMaroc.length > 0) {
+      document.getElementById("signatureMarocTelGroup").style.display = "block";
+      countries.push('#signatureMarocTelGroup');
+    } else {
+      document.getElementById("signatureMarocTelGroup").style.display = "none";
+    }
+
+    // uk tel
     var userInputUk = document.querySelector('input[name=ukTel]').value;
     var ukTelNoSpace = userInputUk.replace(/\D/g, '')
-
     document.getElementById('signatureUkTel').innerHTML = '+44 ' + userInputUk;
     document.getElementById('signatureUkTel').setAttribute("href", "tel:+44" + ukTelNoSpace);
-
-    if(frTelNoSpace.length > 0) {
-      document.getElementById("signatureFrTelGroup").style.display = "block";
-    }
-    if(ukTelNoSpace.length > 0) {
+    if (ukTelNoSpace.length > 0) {
       document.getElementById("signatureUkTelGroup").style.display = "block";
-    }
-    if(frTelNoSpace.length > 0 && ukTelNoSpace.length > 0) {
-      displayCountry();
-    }
-    if(frTelNoSpace.length === 0) {
-      document.getElementById("signatureFrTelGroup").style.display = "none";
-      hideCountry();
-    }
-    if(ukTelNoSpace.length === 0) {
+      countries.push('#signatureUkTelGroup');
+    } else {
       document.getElementById("signatureUkTelGroup").style.display = "none";
+    }
+
+    if (countries.length <= 1) {
       hideCountry();
+    }
+
+    if (countries.length > 1) {
+      hideCountry();
+      for (c in countries) {
+        var country = countries[c];
+        document.querySelector(country + ' .country').style.display = "initial";
+      }
     }
   }
 
@@ -113,10 +139,13 @@
     </td>
   </tr>
   <tr>
-    <td>French Tel</td><td>+33 <input type="tel" name="frTel" oninput="changeTel()" onblur="changeTel()" style="width: 227px;"/></td>
+    <td>French Tel</td><td style="text-align:right;">+33 <input type="tel" name="frTel" oninput="changeTel()" onblur="changeTel()" style="width: 227px;"/></td>
   </tr>
   <tr>
-    <td>UK Tel</td><td>+44 <input type="tel" name="ukTel" oninput="changeTel()" onblur="changeTel()" style="width: 227px;"/></td>
+    <td>UK Tel</td><td style="text-align:right;">+44 <input type="tel" name="ukTel" oninput="changeTel()" onblur="changeTel()" style="width: 227px;"/></td>
+  </tr>
+  <tr>
+    <td>Maroco Tel</td><td style="text-align:right;">+212 <input type="tel" name="marocTel" oninput="changeTel()" onblur="changeTel()" style="width: 227px;"/></td>
   </tr>
 </table>
 
@@ -131,6 +160,7 @@
             <div id="signatureJob" style="font-size: 16px; color: rgb(111,194,183); margin-bottom: 10px;">Cofounder</div>
             <div id="signatureFrTelGroup"><span class="country" style="display: none; line-height: 1.2em;">FR </span><a style="color: rgb(40,90,162);" href="tel:+33612345678" id="signatureFrTel">+33 6 12 34 56 78</a></div>
             <div id="signatureUkTelGroup" style="display: none; line-height: 1.2em;"><span class="country" style="display: none;">UK </span><a style="color: rgb(40,90,162);" id="signatureUkTel"></a></div>
+            <div id="signatureMarocTelGroup" style="display: none; line-height: 1.2em;"><span class="country" style="display: none;">Maroc </span><a style="color: rgb(40,90,162);" id="signatureMarocTel"></a></div>
             <div style="margin-top: 2px; line-height: 1.2em;">48 bd des Batignolles</br>75017 Paris</div>
           </span>
         </td>
