@@ -9,4 +9,4 @@ Modifying the signature's style is very tricky.
 Indeed, the various mail clients modify the signature's style...
 You need to check that the signature renders correcty when received on:
   - Gmail
-  - Outlook
+  - Outlook 2013+
