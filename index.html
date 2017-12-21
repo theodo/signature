@@ -1,320 +1,164 @@
-<h2>Edit your signature</h3>
-<br/>
-<table style="margin: 0 50px; display: inline-block; vertical-align: middle;">
-  <tr>
-    <td>Firstname + Name</td><td style="text-align: right;"><input type="text" name="name" oninput="changeName(false)" style="width: 227px;"/></td>
-  </tr>
-  <tr>
-    <td>Job Title</td>
-    <td style="text-align: right; width: 227px;">
-      <select name="job" onchange="changeJob(false)">
-        <option value="Développeur web agile">Développeur web agile</option>
-        <option value="Développeur web agile">Agile web developer</option>
-        <option value="Architecte développeur">Architecte développeur</option>
-        <option value="Architecte développeur">Architect developer</option>
-        <option value="Coach agile">Coach agile</option>
-        <option value="Coach agile">Agile coach</option>
-        <option value="Directeur de projet">Directeur de projet</option>
-        <option value="Directrice de projet">Directrice de projet</option>
-        <option value="Directeur de projet">Projet director</option>
-        <option value="Operations and finance & Agile coach">Operations and finance & Agile coach</option>
-        <option value="Cofounder">Cofounder</option>
-        <option value="CTO">CTO</option>
-        <option value="CEO">CEO</option>
-        <option value="Chief Sales Officer">Chief Sales Officer</option>
-        <option value="Chief Growth Officer">Chief Growth Officer</option>
-        <option value="Deputy CTO">Deputy CTO</option>
-      </select>
-    </td>
-  </tr>
-  <tr>
-    <td>French Tel</td><td style="text-align:right;">+33 <input type="tel" name="frTel" oninput="changeTel(false)" onblur="changeTel(false)" style="width: 227px;"/></td>
-  </tr>
-  <tr>
-    <td>UK Tel</td><td style="text-align:right;">+44 <input type="tel" name="ukTel" oninput="changeTel(false)" onblur="changeTel(false)" style="width: 227px;"/></td>
-  </tr>
-  <tr>
-    <td>Morocco Tel</td><td style="text-align:right;">+212 <input type="tel" name="marocTel" oninput="changeTel(false)" onblur="changeTel(false)" style="width: 227px;"/></td>
-  </tr>
-</table>
-
-<!-- BEWARE !!!! changing style is very touchy as signatures are often
-reformated by mail clients
- Definition of done:
-    gmail
-    outlook 2013+
-  -->
-<div id="signature" style="display: inline-block; vertical-align: middle;">
-  <table style="height: 90px; font-family: Arial; color: rgb(102,102,102); font-size: 11px;">
-    <tbody>
-      <tr>
-        <td style="padding: 0 !important; height: 90px;"><a href="https://www.theodo.fr" target="_blank" style="display: block; height: 90px;"><img src="https://theodo.github.io/signature/logoTheodo.png" height="90" style="height: 90px; vertical-align: middle; border: none;" alt="Theodo"/></a></td>
-        <td style="padding: 0 0 0 10px; vertical-align: middle;">
-          <h2 id="signatureName" style="font-family: Arial; font-size: 18px; font-weight: bold; margin: 0; padding: 0; color: rgb(40,90,162);">Benoît Charles-Lavauzelle</h2>
-          <div style="margin-bottom: 10px;"><span id="signatureJob" style="font-family: Arial; font-size: 16px; color: rgb(111,194,183);">Cofounder</span></div>
-          <div id="signatureFrTelGroup"><span class="country" style="font-family: Arial; display: none; line-height: 13px;">FR </span><a style="color: rgb(40,90,162); font-family: Arial;" href="tel:+33612345678" id="signatureFrTel">+33 6 12 34 56 78</a></div>
-          <div id="signatureUkTelGroup" style="display: none; line-height: 13px;"><span class="country" style="display: none; font-family: Arial;">UK </span><a style="color: rgb(40,90,162); font-family: Arial;" id="signatureUkTel"></a></div>
-          <div id="signatureMarocTelGroup" style="display: none; line-height: 13px;"><span class="country" style="display: none; font-family: Arial;">Maroc </span><a style="color: rgb(40,90,162); font-family: Arial;" id="signatureMarocTel"></a></div>
-          <div style="margin-top: 2px; line-height: 13px; font-family:Arial; font-size: 11px;"><a style="color: rgb(102,102,102);" href="https://www.google.com/maps/place/48+Boulevard+des+Batignolles,+75017+Paris/@48.8830087,2.319905,17z/data=!4m5!3m4!1s0x47e66fb36ec5fa69:0x88741bbbddf9ec3d!8m2!3d48.8828958!4d2.3222117" target="_blank">48 bd des Batignolles</br>75017 Paris</a></div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Signature</title>
+</head>
+<body>
+  <h2>Edit your signature</h3>
   <br/>
-</div>
-<br/>
-<br/>
+  <table style="margin: 0 50px; display: inline-block; vertical-align: middle;">
+    <tr>
+      <td>Firstname + Name</td><td style="text-align: right; width: 300px;"><input type="text" name="name" oninput="changeName(false)" style="width: 227px;"/></td>
+    </tr>
+    <tr>
+      <td>Job Title</td>
+      <td style="text-align: right; width: 227px;">
+        <select name="job" onchange="changeJob(false)">
+          <option value="Développeur web agile">Développeur web agile</option>
+          <option value="Développeur web agile">Agile web developer</option>
+          <option value="Architecte développeur">Architecte développeur</option>
+          <option value="Architecte développeur">Architect developer</option>
+          <option value="Coach agile">Coach agile</option>
+          <option value="Coach agile">Agile coach</option>
+          <option value="Directeur de projet">Directeur de projet</option>
+          <option value="Directrice de projet">Directrice de projet</option>
+          <option value="Directeur de projet">Projet director</option>
+          <option value="Operations and finance & Agile coach">Operations and finance & Agile coach</option>
+          <option value="Cofounder">Cofounder</option>
+          <option value="CTO">CTO</option>
+          <option value="CEO">CEO</option>
+          <option value="Chief Sales Officer">Chief Sales Officer</option>
+          <option value="Chief Growth Officer">Chief Growth Officer</option>
+          <option value="Deputy CTO">Deputy CTO</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>French Tel</td><td style="text-align:right;">+33 <input type="tel" name="frTel" oninput="changeTel(false)" onblur="changeTel(false)" style="width: 227px;"/></td>
+    </tr>
+    <tr>
+      <td>UK Tel</td><td style="text-align:right;">+44 <input type="tel" name="ukTel" oninput="changeTel(false)" onblur="changeTel(false)" style="width: 227px;"/></td>
+    </tr>
+    <tr>
+      <td>Morocco Tel</td><td style="text-align:right;">+212 <input type="tel" name="marocTel" oninput="changeTel(false)" onblur="changeTel(false)" style="width: 227px;"/></td>
+    </tr>
+  </table>
 
-<table style="border-collapse: collapse; border-top: 1px solid grey; border-bottom: 1px solid grey;">
-  <tr>
-    <td><h3>Gmail</h3></td>
-    <td>
-      <ol style="display: inline-block; vertical-align: middle;">
-        <li>Fill the form !</li>
-        <li><input style="" type="button" value="Copy your signature" onclick="selectContent('signature'); this.style.color = 'green';"/></li>
-        <li>In your <a href="https://mail.google.com/mail/u/0/#settings/general" target="_blank">Gmail settings</a>, you will have to :
-          <ol>
-            <li>Paste your signature</li>
-            <li><strong style="color: red;">Check</strong> the box below the signature</li>
-            <li><strong style="color: red;">Save</strong> your changes</li>
-          </ol>
-        </li>
-        <li><strong style="color: red;">Refresh</strong> all your Gmail tabs</li>
-      </ol>
-      <img src="gmail.png" style="max-height: 400px; max-width: 600px; vertical-align: middle;"/>
-    </td>
-  </tr>
-  <tr style="border-top: 1px solid grey;">
-    <td><h3>Inbox</h3></td>
-    <td>
-      <ol>
-        <li>Fill the form !</li>
-        <li><input style="" type="button" value="Copy your signature" onclick="selectContent('signature'); this.style.color = 'green';"/></li>
-        <li>Paste it in your Inbox settings</li>
-        <li><strong style="color: red;">Refresh</strong> all your Inbox tabs</li>
-      </ol>
-    </td>
-  </tr>
-  <tr style="border-top: 1px solid grey;">
-    <td><h3>Hubspot</h3></td>
-    <td>
-      <ol style="display: inline-block; vertical-align: middle;">
-        <li>Fill the form !</li>
-        <li><input type="button" value="Copy your signature's code" onclick="displayCode(); selectContent('signatureCode'); this.style.color = 'green'; document.getElementById('signatureCode').style.display = 'none';"/></li>
-        <li>Paste it in Hubspot, Profile & Preferences > Edit Signature > HTML tab</li>
-        <li>Save</li>
-      </ol>
-      <img src="hubspot.jpeg" style="max-height: 400px; max-width: 600px; vertical-align: middle;"/>
-    </td>
-  </tr>
-  <tr style="border-top: 1px solid grey;">
-    <td><h3>Mail on OSX</h3></td>
-    <td>
-      <ol style="display: inline-block; vertical-align: middle; max-width: 400px;">
-        <li>Fill the form !</li>
-        <li><input type="button" value="Copy your signature's code" onclick="displayCode(); selectContent('signatureCode'); this.style.color = 'green'; document.getElementById('signatureCode').style.display = 'none';"/></li>
-        <li>In Mail
-          <ul style="list-style:square;">
-            <li><input type="checkbox"/> Open the Preference pane &gt; Signatures tab</li>
-            <li><input type="checkbox"/> Add a signature to your Theodo account by clicking on the + button. (The content of the signature does not matter).</li>
-            <li><input type="checkbox"/> <strong style="color: red;">Close</strong> the Preference pane to save the signature</li>
-          </ul>
-        </li>
-        <li>In your finder
-          <ul style="list-style:square;">
-            <li><input type="checkbox"/> Press Cmd + G, and go to ~/Library/Mail</li>
-            <li><input type="checkbox"/> In the open folder, there should be a folder starting with 'V' ('V2, 'V3', 'V4') depending on your version of Mac OS. Open this folder, then MailData then Signatures</li>
-            <li><input type="checkbox"/> In the list of files with extension <em>.mailsignature</em>, find the signature you just added (find it by date of creation if needed)</li>
-            <li><input type="checkbox"/> Open this signature file with TextEdit and remove the second part as in the picture</li>
-            <li> Paste the signature's code in the file</li>
-            <li><input type="checkbox"/> Save and close the file</li>
-            <li><input type="checkbox"/> Open the file information panel (Cmd + i on file highlighted) and <strong style="color: red;">lock</strong> the file to prevent Mail from erasing your signature</li>
-          </ul>
-        </li>
-        <li><strong style="color: red;">Restart Mail</strong></li>
-        <li>If it didn't work, try deleting the Signatures folder (you will loose all signatures for all accounts), restarting Mail, and restarting at step 1.</li>
-      </ol>
-      <img src="appleMail.png" style="max-height: 400px; max-width: 600px; vertical-align: middle;"/>
-    </td>
-  </tr>
-  <tr style="border-top: 1px solid grey;">
-    <td><h3>Mail on iOS</h3></td>
-    <td>
-      <ol>
-        <li>Fill the form !</li>
-        <li><input style="" type="button" value="Copy your signature" onclick="selectContent('signature'); this.style.color = 'green';"/></li>
-        <li>Paste it to Settings/Mail/Signature.</li>
-        <li>The signature will appear unformated, so <strong style="color: red;">shake your iPhone</strong> to undo automatic modifications. It should now appear correctly.</li>
-        <li>Just quit your settings</li>
-      </ol>
-    </td>
-  </tr>
-</table>
+  <!-- BEWARE !!!! changing style is very touchy as signatures are often
+  reformated by mail clients
+   Definition of done:
+      gmail
+      outlook 2013+
+    -->
+  <div id="signature" style="display: inline-block; vertical-align: middle;">
+    <table style="height: 90px; font-family: Arial; color: rgb(102,102,102); font-size: 11px;">
+      <tbody>
+        <tr>
+          <td style="padding: 0 !important; height: 90px;"><a href="https://www.theodo.fr" target="_blank" style="display: block; height: 90px;"><img src="https://theodo.github.io/signature/logoTheodo.png" height="90" style="height: 90px; vertical-align: middle; border: none;" alt="Theodo"/></a></td>
+          <td style="padding: 0 0 0 10px; vertical-align: middle;">
+            <h2 id="signatureName" style="font-family: Arial; font-size: 18px; font-weight: bold; margin: 0; padding: 0; color: rgb(40,90,162);">Benoît Charles-Lavauzelle</h2>
+            <div style="margin-bottom: 10px;"><span id="signatureJob" style="font-family: Arial; font-size: 16px; color: rgb(111,194,183);">Cofounder</span></div>
+            <div id="signatureFrTelGroup"><span class="country" style="font-family: Arial; display: none; line-height: 13px;">FR </span><a style="color: rgb(40,90,162); font-family: Arial;" href="tel:+33612345678" id="signatureFrTel">+33 6 12 34 56 78</a></div>
+            <div id="signatureUkTelGroup" style="display: none; line-height: 13px;"><span class="country" style="display: none; font-family: Arial;">UK </span><a style="color: rgb(40,90,162); font-family: Arial;" id="signatureUkTel"></a></div>
+            <div id="signatureMarocTelGroup" style="display: none; line-height: 13px;"><span class="country" style="display: none; font-family: Arial;">Maroc </span><a style="color: rgb(40,90,162); font-family: Arial;" id="signatureMarocTel"></a></div>
+            <div style="margin-top: 2px; line-height: 13px; font-family:Arial; font-size: 11px;"><a style="color: rgb(102,102,102);" href="https://www.google.com/maps/place/48+Boulevard+des+Batignolles,+75017+Paris/@48.8830087,2.319905,17z/data=!4m5!3m4!1s0x47e66fb36ec5fa69:0x88741bbbddf9ec3d!8m2!3d48.8828958!4d2.3222117" target="_blank">48 bd des Batignolles</br>75017 Paris</a></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br/>
+  </div>
+  <br/>
+  <br/>
 
-<pre style="background-color: grey;"><code id="signatureCode"></code></pre>
+  <table style="border-collapse: collapse; border-top: 1px solid grey; border-bottom: 1px solid grey;">
+    <tr>
+      <td><h3>Gmail</h3></td>
+      <td>
+        <ol style="display: inline-block; vertical-align: middle;">
+          <li>Fill the form !</li>
+          <li><input style="" type="button" value="Copy your signature" onclick="selectContent('signature'); this.style.color = 'green';"/></li>
+          <li>In your <a href="https://mail.google.com/mail/u/0/#settings/general" target="_blank">Gmail settings</a>, you will have to :
+            <ol>
+              <li>Paste your signature</li>
+              <li><strong style="color: red;">Check</strong> the box below the signature</li>
+              <li><strong style="color: red;">Save</strong> your changes</li>
+            </ol>
+          </li>
+          <li><strong style="color: red;">Refresh</strong> all your Gmail tabs</li>
+        </ol>
+        <img src="gmail.png" style="max-height: 400px; max-width: 600px; vertical-align: middle;"/>
+      </td>
+    </tr>
+    <tr style="border-top: 1px solid grey;">
+      <td><h3>Inbox</h3></td>
+      <td>
+        <ol>
+          <li>Fill the form !</li>
+          <li><input style="" type="button" value="Copy your signature" onclick="selectContent('signature'); this.style.color = 'green';"/></li>
+          <li>Paste it in your Inbox settings</li>
+          <li><strong style="color: red;">Refresh</strong> all your Inbox tabs</li>
+        </ol>
+      </td>
+    </tr>
+    <tr style="border-top: 1px solid grey;">
+      <td><h3>Hubspot</h3></td>
+      <td>
+        <ol style="display: inline-block; vertical-align: middle;">
+          <li>Fill the form !</li>
+          <li><input type="button" value="Copy your signature's code" onclick="displayCode(); selectContent('signatureCode'); this.style.color = 'green'; document.getElementById('signatureCode').style.display = 'none';"/></li>
+          <li>Paste it in Hubspot, Profile & Preferences > Edit Signature > HTML tab</li>
+          <li>Save</li>
+        </ol>
+        <img src="hubspot.jpeg" style="max-height: 400px; max-width: 600px; vertical-align: middle;"/>
+      </td>
+    </tr>
+    <tr style="border-top: 1px solid grey;">
+      <td><h3>Mail on OSX</h3></td>
+      <td>
+        <ol style="display: inline-block; vertical-align: middle; max-width: 400px;">
+          <li>Fill the form !</li>
+          <li><input type="button" value="Copy your signature's code" onclick="displayCode(); selectContent('signatureCode'); this.style.color = 'green'; document.getElementById('signatureCode').style.display = 'none';"/></li>
+          <li>In Mail
+            <ul style="list-style:square;">
+              <li><input type="checkbox"/> Open the Preference pane &gt; Signatures tab</li>
+              <li><input type="checkbox"/> Add a signature to your Theodo account by clicking on the + button. (The content of the signature does not matter).</li>
+              <li><input type="checkbox"/> <strong style="color: red;">Close</strong> the Preference pane to save the signature</li>
+            </ul>
+          </li>
+          <li>In your finder
+            <ul style="list-style:square;">
+              <li><input type="checkbox"/> Press Cmd + G, and go to ~/Library/Mail</li>
+              <li><input type="checkbox"/> In the open folder, there should be a folder starting with 'V' ('V2, 'V3', 'V4') depending on your version of Mac OS. Open this folder, then MailData then Signatures</li>
+              <li><input type="checkbox"/> In the list of files with extension <em>.mailsignature</em>, find the signature you just added (find it by date of creation if needed)</li>
+              <li><input type="checkbox"/> Open this signature file with TextEdit and remove the second part as in the picture</li>
+              <li> Paste the signature's code in the file</li>
+              <li><input type="checkbox"/> Save and close the file</li>
+              <li><input type="checkbox"/> Open the file information panel (Cmd + i on file highlighted) and <strong style="color: red;">lock</strong> the file to prevent Mail from erasing your signature</li>
+            </ul>
+          </li>
+          <li><strong style="color: red;">Restart Mail</strong></li>
+          <li>If it didn't work, try deleting the Signatures folder (you will loose all signatures for all accounts), restarting Mail, and restarting at step 1.</li>
+        </ol>
+        <img src="appleMail.png" style="max-height: 400px; max-width: 600px; vertical-align: middle;"/>
+      </td>
+    </tr>
+    <tr style="border-top: 1px solid grey;">
+      <td><h3>Mail on iOS</h3></td>
+      <td>
+        <ol>
+          <li>Fill the form !</li>
+          <li><input style="" type="button" value="Copy your signature" onclick="selectContent('signature'); this.style.color = 'green';"/></li>
+          <li>Paste it to Settings/Mail/Signature.</li>
+          <li>The signature will appear unformated, so <strong style="color: red;">shake your iPhone</strong> to undo automatic modifications. It should now appear correctly.</li>
+          <li>Just quit your settings</li>
+        </ol>
+      </td>
+    </tr>
+  </table>
 
-<script>
-  function changeName(fromLocalStorage) {
-    var name;
-    if (fromLocalStorage) {
-      if (null != localStorage.getItem('signatureName')) {
-        name = localStorage.getItem('signatureName');
-      } else {
-        name = "Benoît Charles-Lavauzelle";
-      }
-      document.querySelector('input[name=name]').value = name;
-    } else {
-      name = document.querySelector('input[name=name]').value;
-    }
-    document.getElementById('signatureName').innerHTML = name;
-    localStorage.setItem("signatureName", name);
-  }
-  function changeJob(fromLocalStorage) {
-    var job;
-    if (fromLocalStorage) {
-      if (null != localStorage.getItem('signatureJob')) {
-        job = localStorage.getItem('signatureJob');
-      } else {
-        job = "Cofounder";
-      }
-      document.querySelector('select[name=job]').value = job;
-    } else {
-      var e = document.querySelector('select[name=job]');
-      job = e.options[e.selectedIndex].text;
-    }
-    document.getElementById('signatureJob').innerHTML = job;
-    localStorage.setItem("signatureJob", job);
-  }
-  function hideCountry() {
-    document.querySelector("#signatureFrTelGroup .country").style.display = "none"
-    document.querySelector("#signatureUkTelGroup .country").style.display = "none"
-    document.querySelector("#signatureMarocTelGroup .country").style.display = "none"
-  }
-
-  function formatTel(telNoSpace) {
-    var formattedInput = '';
-    for(var i = 0; i<telNoSpace.length; i++) {
-      if((i % 2) === 1) {
-        formattedInput += ' ';
-      }
-      formattedInput += telNoSpace.charAt(i);
-    }
-    return formattedInput;
-  }
-
-  function changeTel(fromLocalStorage) {
-    var userInputFr, userInputUk, userInputMaroc;
-    if (fromLocalStorage) {
-      if (null != localStorage.getItem('signatureFrTel')) {
-        userInputFr = localStorage.getItem('signatureFrTel');
-      } else {
-        userInputFr = "678901234";
-      }
-      if (null != localStorage.getItem('signatureUkTel')) {
-        userInputUk = localStorage.getItem('signatureUkTel');
-      } else {
-        userInputUk = "";
-      }
-      if (null != localStorage.getItem('signatureMarocTel')) {
-        userInputMaroc = localStorage.getItem('signatureMarocTel');
-      } else {
-        userInputMaroc = "";
-      }
-    } else {
-      userInputFr = document.querySelector('input[name=frTel]').value;
-      userInputMaroc = document.querySelector('input[name=marocTel]').value;
-      userInputUk = document.querySelector('input[name=ukTel]').value;
-    }
-
-
-    var countries  = [];
-
-    // french tel
-    var frTelNoSpace = userInputFr.replace(/\D/g, '');
-    localStorage.setItem('signatureFrTel', frTelNoSpace);
-    var formattedInputFr = formatTel(frTelNoSpace);
-    document.querySelector('input[name=frTel]').value = formattedInputFr;
-    document.getElementById('signatureFrTel').innerHTML = '+33 ' + formattedInputFr;
-    document.getElementById('signatureFrTel').setAttribute("href", "tel:+33" + frTelNoSpace);
-    if (formattedInputFr.length > 0) {
-      document.getElementById("signatureFrTelGroup").style.display = "block";
-      countries.push('#signatureFrTelGroup');
-    } else {
-      document.getElementById("signatureFrTelGroup").style.display = "none";
-    }
-
-    // maroc tel
-    var marocTelNoSpace = userInputMaroc.replace(/\D/g, '');
-    localStorage.setItem('signatureMarocTel', marocTelNoSpace);
-    var formattedInputMaroc = formatTel(marocTelNoSpace);
-    document.querySelector('input[name=marocTel]').value = formattedInputMaroc;
-    document.getElementById('signatureMarocTel').innerHTML = '+212 ' + formattedInputMaroc;
-    document.getElementById('signatureMarocTel').setAttribute("href", "tel:+212" + marocTelNoSpace);
-    if (formattedInputMaroc.length > 0) {
-      document.getElementById("signatureMarocTelGroup").style.display = "block";
-      countries.push('#signatureMarocTelGroup');
-    } else {
-      document.getElementById("signatureMarocTelGroup").style.display = "none";
-    }
-
-    // uk tel
-    var ukTelNoSpace = userInputUk.replace(/\D/g, '');
-    localStorage.setItem('signatureUkTel', ukTelNoSpace);
-    document.querySelector('input[name=ukTel]').value = userInputUk;
-    document.getElementById('signatureUkTel').innerHTML = '+44 ' + userInputUk;
-    document.getElementById('signatureUkTel').setAttribute("href", "tel:+44" + ukTelNoSpace);
-    if (ukTelNoSpace.length > 0) {
-      document.getElementById("signatureUkTelGroup").style.display = "block";
-      countries.push('#signatureUkTelGroup');
-    } else {
-      document.getElementById("signatureUkTelGroup").style.display = "none";
-    }
-
-    if (countries.length <= 1) {
-      hideCountry();
-    }
-
-    if (countries.length > 1) {
-      hideCountry();
-      for (c in countries) {
-        var country = countries[c];
-        document.querySelector(country + ' .country').style.display = "initial";
-      }
-    }
-  }
-
-  function displayCode() {
-    var code = document.getElementById("signature").innerHTML;
-    code = code.replace(/&/g, '&amp;');
-    code = code.replace(/</g, '&lt;');
-    code = code.replace(/>/g, '&gt;');
-    document.getElementById("signatureCode").innerHTML = code;
-  }
-
-  function selectContent(elId) {
-    var el = document.getElementById(elId);
-    var body = document.body, range, sel;
-    if (document.createRange && window.getSelection) {
-      range = document.createRange();
-      sel = window.getSelection();
-      sel.removeAllRanges();
-      try {
-        range.selectNodeContents(el);
-      } catch (e) {
-        range.selectNode(el);
-      }
-      sel.addRange(range);
-      document.execCommand("copy");
-    } else if (body.createTextRange) {
-      range = body.createTextRange();
-      range.moveToElementText(el);
-      range.select();
-      range.execCommand("Copy");
-    }
-  }
-
-  // init values
-  changeName(true);
-  changeJob(true);
-  changeTel(true);
-</script>
+  <pre style="background-color: grey;"><code id="signatureCode"></code></pre>
+  <script src="script.js"></script>
+</body>
+</html>
