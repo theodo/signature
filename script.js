@@ -42,14 +42,24 @@ function changeCountry(fromLocalStorage) {
     var e = document.querySelector('select[name=country]');
     country = e.options[e.selectedIndex].value;
   }
+
+  var ukAddress = document.getElementById('ukAddress');
+  var frenchAddress = document.getElementById('frenchAddress');
+  var logo = document.getElementById('logo');
+  var frTel = document.getElementById('signatureFrTelGroup');
+  var ukTel = document.getElementById('signatureUkTelGroup');
   if(country == 'UK') {
-    document.getElementById('ukAddress').style.display = 'initial';
-    document.getElementById('frenchAddress').style.display = 'none';
-    document.getElementById('logo').href = 'https://www.theodo.co.uk';
+    ukAddress.style.display = 'initial';
+    frenchAddress.style.display = 'none';
+    logo.href = 'https://www.theodo.co.uk';
+    //reorder tels
+    ukTel.parentNode.insertBefore(frTel, ukTel.nextSibling);
   } else {
-    document.getElementById('ukAddress').style.display = 'none';
-    document.getElementById('frenchAddress').style.display = 'initial';
-    document.getElementById('logo').href = 'https://www.theodo.fr';
+    ukAddress.style.display = 'none';
+    frenchAddress.style.display = 'initial';
+    logo.href = 'https://www.theodo.fr';
+    //reorder tels
+    frTel.parentNode.insertBefore(ukTel, frTel.nextSibling);
   }
   localStorage.setItem("country", country);
 }
