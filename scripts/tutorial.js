@@ -1,8 +1,10 @@
 $('#tutorial input.copySignature').click(function() {
+  removeHiddenNodesFromSignature();
   selectContent('signature');
   this.style.color = 'green';
 });
 $('#tutorial input.copySignatureCode').click(function() {
+  removeHiddenNodesFromSignature()
   // display signature's code
   var code = document.getElementById("signature").innerHTML;
   code = code.replace(/&/g, '&amp;');
@@ -35,4 +37,10 @@ function selectContent(elId) {
     range.select();
     range.execCommand("Copy");
   }
+}
+
+function removeHiddenNodesFromSignature() {
+  $('#signature .hidden').remove();
+  $('#signatureForm select').attr('disabled', true);
+  $('#signatureForm input').attr('disabled', true);
 }

@@ -66,9 +66,9 @@ function updateTelephone(localStorageKey, inputNode, signatureGroupNode, signatu
   signatureNode.attr("href", `tel:+${internationalCode}${telNoSpace}`);
   signatureNode.text(`+${internationalCode} ${telephoneToUse}`);
   if (telNoSpace.length > 0) {
-    signatureGroupNode.show();
+    signatureGroupNode.removeClass('hidden');
   } else {
-    signatureGroupNode.hide();
+    signatureGroupNode.addClass('hidden');
   }
 }
 
@@ -85,20 +85,20 @@ function formatTel(telNoSpace) {
 
 function displayOrHideCountries() {
   var countryNodes = [];
-  if (signatureFrTelGroup.css('display') !== 'none') {
+  if (!signatureFrTelGroup.hasClass('hidden')) {
     countryNodes.push(signatureFrTelGroup.find('.country'));
   }
-  if (signatureUkTelGroup.css('display') !== 'none') {
+  if (!signatureUkTelGroup.hasClass('hidden')) {
     countryNodes.push(signatureUkTelGroup.find('.country'));
   }
-  if (signatureMaTelGroup.css('display') !== 'none') {
+  if (!signatureMaTelGroup.hasClass('hidden')) {
     countryNodes.push(signatureMaTelGroup.find('.country'));
   }
 
-  $("#signature .country").hide();
+  $("#signature .country").addClass('hidden');
   if (countryNodes.length > 1) {
     for (var c in countryNodes) {
-      countryNodes[c].css('display', 'initial');
+      countryNodes[c].removeClass('hidden');
     }
   }
 }
