@@ -8,6 +8,7 @@ $('#tutorial input.copySignatureCode').click(function() {
   code = code.replace(/&/g, '&amp;');
   code = code.replace(/</g, '&lt;');
   code = code.replace(/>/g, '&gt;');
+  $('body').append("<pre><code id='signatureCode'></code></pre>");
   document.getElementById("signatureCode").innerHTML = code;
   selectContent('signatureCode');
   document.getElementById('signatureCode').style.display = 'none';
