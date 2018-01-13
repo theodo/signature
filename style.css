@@ -1,0 +1,66 @@
+body {
+  margin: 20px;
+}
+
+#signatureForm {
+  margin: 0 50px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#signatureForm tr td:nth-child(2) {
+  text-align: right;
+}
+
+#signatureForm tr td:last-child {
+  padding: 0;
+}
+
+#signatureForm tr td:last-child * {
+  box-sizing: border-box;
+  width: 230px;
+}
+
+#jobHelp {
+  cursor: help;
+  margin-left: 1em;
+  padding: 0 0.4em;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+}
+
+#signature {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#tutorial {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#tutorial tr {
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+
+#tutorial tr td > ol {
+  display: inline-block;
+  vertical-align: middle;
+  width: 500px;
+}
+
+#tutorial tr td ul {
+  list-style-type: square;
+}
+
+#tutorial tr td img {
+  vertical-align: middle;
+  max-height: 400px;
+  max-width: 600px;
+}
+
+strong {
+  color: red;
+}
