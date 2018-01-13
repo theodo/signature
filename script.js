@@ -35,37 +35,5 @@ function changeCountry(fromLocalStorage) {
   localStorage.setItem("country", country);
 }
 
-
-
-function displayCode() {
-  var code = document.getElementById("signature").innerHTML;
-  code = code.replace(/&/g, '&amp;');
-  code = code.replace(/</g, '&lt;');
-  code = code.replace(/>/g, '&gt;');
-  document.getElementById("signatureCode").innerHTML = code;
-}
-
-function selectContent(elId) {
-  var el = document.getElementById(elId);
-  var body = document.body, range, sel;
-  if (document.createRange && window.getSelection) {
-    range = document.createRange();
-    sel = window.getSelection();
-    sel.removeAllRanges();
-    try {
-      range.selectNodeContents(el);
-    } catch (e) {
-      range.selectNode(el);
-    }
-    sel.addRange(range);
-    document.execCommand("copy");
-  } else if (body.createTextRange) {
-    range = body.createTextRange();
-    range.moveToElementText(el);
-    range.select();
-    range.execCommand("Copy");
-  }
-}
-
 // init values
 changeCountry(true);
