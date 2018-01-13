@@ -13,22 +13,7 @@ function changeName(fromLocalStorage) {
   document.getElementById('signatureName').innerHTML = name;
   localStorage.setItem("signatureName", name);
 }
-function changeJob(fromLocalStorage) {
-  var job;
-  if (fromLocalStorage) {
-    if (null != localStorage.getItem('signatureJob')) {
-      job = localStorage.getItem('signatureJob');
-    } else {
-      job = "Cofounder";
-    }
-    document.querySelector('select[name=job]').value = job;
-  } else {
-    var e = document.querySelector('select[name=job]');
-    job = e.options[e.selectedIndex].text;
-  }
-  document.getElementById('signatureJob').innerHTML = job;
-  localStorage.setItem("signatureJob", job);
-}
+
 function changeCountry(fromLocalStorage) {
   var country;
   if (fromLocalStorage) {
@@ -193,6 +178,5 @@ function selectContent(elId) {
 
 // init values
 changeName(true);
-changeJob(true);
 changeTel(true);
 changeCountry(true);
