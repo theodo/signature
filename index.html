@@ -2,14 +2,14 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>Signature</title>
+  <title>Theodo Signature</title>
 </head>
 <body>
   <h2>Edit your signature</h3>
   <br/>
   <table style="margin: 0 50px; display: inline-block; vertical-align: middle;">
     <tr>
-      <td>Firstname + Name</td><td style="text-align: right; width: 300px;"><input type="text" name="name" oninput="changeName(false)" style="width: 227px;"/></td>
+      <td>Firstname + Name</td><td style="text-align: right; width: 300px;"><input type="text" id="nameInput" style="width: 227px;"/></td>
     </tr>
     <tr>
       <td><em title="Contact Gireg K for any question" style="cursor: help;">Job Title<em></td>
@@ -156,6 +156,7 @@
   <pre style="background-color: grey;"><code id="signatureCode"></code></pre>
   <script src="jquery-3.2.1.slim.min.js"></script>
   <script src="script.js"></script>
+  <script src="nameInput.js"></script>
   <script src="jobSelector.js"></script>
 </body>
 </html>

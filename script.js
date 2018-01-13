@@ -1,18 +1,4 @@
-function changeName(fromLocalStorage) {
-  var name;
-  if (fromLocalStorage) {
-    if (null != localStorage.getItem('signatureName')) {
-      name = localStorage.getItem('signatureName');
-    } else {
-      name = "Benoît Charles-Lavauzelle";
-    }
-    document.querySelector('input[name=name]').value = name;
-  } else {
-    name = document.querySelector('input[name=name]').value;
-  }
-  document.getElementById('signatureName').innerHTML = name;
-  localStorage.setItem("signatureName", name);
-}
+
 
 function changeCountry(fromLocalStorage) {
   var country;
@@ -177,6 +163,5 @@ function selectContent(elId) {
 }
 
 // init values
-changeName(true);
 changeTel(true);
 changeCountry(true);
