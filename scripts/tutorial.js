@@ -1,24 +1,27 @@
 $('#tutorial input.copySignature').click(function() {
-  removeHiddenNodesFromSignature();
-  selectContent('signature');
-  this.style.color = 'green';
-});
-$('#tutorial input.copySignatureCode').click(function() {
-  removeHiddenNodesFromSignature()
-  // display signature's code
-  var code = document.getElementById("signature").innerHTML;
-  code = code.replace(/&/g, '&amp;');
-  code = code.replace(/</g, '&lt;');
-  code = code.replace(/>/g, '&gt;');
-  $('body').append("<pre><code id='signatureCode'></code></pre>");
-  document.getElementById("signatureCode").innerHTML = code;
-  selectContent('signatureCode');
-  document.getElementById('signatureCode').style.display = 'none';
+  $('#theodo-signature .hidden').remove();
+  selectContent('chosen-signature');
   this.style.color = 'green';
 });
 
-function selectContent(elId) {
-  var el = document.getElementById(elId);
+$('#tutorial input.copySignatureCode').click(function() {
+  $('#theodo-signature .hidden').remove();
+  // display signature's code
+  var code = $('.chosen-signature').html();
+  code = code.replace(/&/g, '&amp;');
+  code = code.replace(/</g, '&lt;');
+  code = code.replace(/>/g, '&gt;');
+  if($('.signatureCode').length == 0) {
+    $('body').append("<pre><code class='signatureCode'></code></pre>");
+  }
+  $('.signatureCode').html(code);
+  selectContent('signatureCode');
+  $('.signatureCode')[0].style.display = 'none';
+  this.style.color = 'green';
+});
+
+function selectContent(className) {
+  var el = document.getElementsByClassName(className)[0];
   var body = document.body, range, sel;
   if (document.createRange && window.getSelection) {
     range = document.createRange();
@@ -37,10 +40,4 @@ function selectContent(elId) {
     range.select();
     range.execCommand("Copy");
   }
-}
-
-function removeHiddenNodesFromSignature() {
-  $('#signature .hidden').remove();
-  $('#signatureForm select').attr('disabled', true);
-  $('#signatureForm input').attr('disabled', true);
 }

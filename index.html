@@ -2,12 +2,15 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>Theodo Signature</title>
+  <title>M33 Signatures</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <h2>Edit your signature</h3>
-  <br/>
+  <div id="m33-planet-choice">
+    <div id="theodo-signature-choice"><img src="images/logoTheodo.png"/></div>
+    <div id="bam-signature-choice"><img src="images/bamLogo.jpg"/></div>
+  </div>
   <table id="signatureForm">
     <tr>
       <td>Firstname + Name</td>
@@ -24,17 +27,17 @@
       <td>+33</td>
       <td><input type="tel" id="frTelInput"/></td>
     </tr>
-    <tr>
+    <tr id="UK-tel-form">
       <td>UK Tel</td>
       <td>+44</td>
       <td><input type="tel" id="ukTelInput"/></td>
     </tr>
-    <tr>
+    <tr id="MA-tel-form">
       <td>Morocco Tel</td>
       <td>+212</td>
       <td><input type="tel" id="maTelInput"/></td>
     </tr>
-    <tr>
+    <tr id="country-form">
       <td>Country</td>
       <td></td>
       <td>
@@ -46,36 +49,10 @@
     </tr>
   </table>
 
-  <!-- BEWARE !!!! changing style is very touchy as signatures are often
-  reformated by mail clients
-   Definition of done:
-      gmail
-      outlook 2013+
-    -->
-  <!-- Start of signature -->
-  <div id="signature">
-    <table style="height: 90px; font-family: Arial; color: rgb(102,102,102); font-size: 11px;">
-      <tbody>
-        <tr>
-          <td style="padding: 0 !important; height: 90px;"><a id="logo" href="https://www.theodo.fr" target="_blank" style="display: block; height: 90px;"><img src="https://theodo.github.io/signature/images/logoTheodo.png" height="90" style="height: 90px; vertical-align: middle; border: none;" alt="Theodo"/></a></td>
-          <td style="padding: 0 0 0 10px; vertical-align: middle;">
-            <h2 id="signatureName" style="font-family: Arial; font-size: 18px; font-weight: bold; margin: 0; padding: 0; color: rgb(40,90,162);">Benoît Charles-Lavauzelle</h2>
-            <div style="margin-bottom: 10px;"><span id="signatureJob" style="font-family: Arial; font-size: 16px; color: rgb(111,194,183);">Cofounder</span></div>
-            <div id="signatureFrTelGroup"><span class="country hidden" style="font-family: Arial; line-height: 13px;">FR </span><a style="color: rgb(40,90,162); font-family: Arial;" href="tel:+33612345678" id="signatureFrTel">+33 6 12 34 56 78</a></div>
-            <div id="signatureUkTelGroup" class="hidden"><span class="country hidden" style="font-family: Arial; line-height: 13px;">UK </span><a style="color: rgb(40,90,162); font-family: Arial;" id="signatureUkTel"></a></div>
-            <div id="signatureMaTelGroup" class="hidden"><span class="country hidden" style="font-family: Arial; line-height: 13px;">MA </span><a style="color: rgb(40,90,162); font-family: Arial;" id="signatureMaTel"></a></div>
-            <div style="margin-top: 2px; line-height: 13px; font-family:Arial; font-size: 11px;">
-              <a style="color: rgb(102,102,102);" id="frenchAddress" href="https://www.google.com/maps/place/48+Boulevard+des+Batignolles,+75017+Paris/@48.8830087,2.319905,17z/data=!4m5!3m4!1s0x47e66fb36ec5fa69:0x88741bbbddf9ec3d!8m2!3d48.8828958!4d2.3222117" target="_blank">48 bd des Batignolles<br/>75017 Paris</a>
-              <a style="color: rgb(102,102,102);" id="ukAddress" class="hidden" href="https://www.google.fr/maps/place/2-7+Clerkenwell+Green,+Clerkenwell,+London+EC1R+0DE,+UK/@51.5230937,-0.1065903,17z/data=!3m1!4b1!4m5!3m4!1s0x48761b502d3da335:0x61da145f8a722351!8m2!3d51.5230904!4d-0.1044016" target="_blank">2-7 Clerkenwell Green<br/>London EC1R 0DE</a>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <div><br/></div>
-  </div>
-  <!-- End of signature -->
+  <div id="theodo-signature"></div>
+  <div id="bam-signature"></div>
 
+  <br/><br/>
   <p>(<strong>Warning</strong>: never modify your <strong>phone number</strong> in Gmail as it could break the signature's design)</p>
 
   <table id="tutorial">
@@ -164,7 +141,8 @@
     </tr>
   </table>
 
-  <script src="scripts/jquery-3.2.1.slim.min.js"></script>
+  <script src="scripts/jquery-3.2.1.min.js"></script>
+  <script src="scripts/loadSignatureTemplate.js"></script>
   <script src="scripts/nameInput.js"></script>
   <script src="scripts/jobSelector.js"></script>
   <script src="scripts/telephoneInput.js"></script>

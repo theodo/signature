@@ -21,22 +21,48 @@ body {
   width: 230px;
 }
 
+#m33-planet-choice {
+  height: 80px;
+  line-height: 80px;
+  margin: 0 0 30px 50px;
+}
+#m33-planet-choice div {
+  height: 100%;
+  display: inline-block;
+  margin-right: 30px;
+  vertical-align: middle;
+  padding-bottom: 5px;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+}
+#m33-planet-choice img {
+  max-height: 80px;
+  max-width: 80px;
+  vertical-align: middle;
+}
+#m33-planet-choice div:hover {
+  border-bottom: 3px solid black;
+}
+
 #jobHelp {
   cursor: help;
   margin-left: 1em;
-  padding: 0 0.4em;
   background-color: black;
   color: white;
   border-radius: 50%;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  vertical-align: middle;
 }
 
-#signature {
+#theodo-signature, #bam-signature {
   display: inline-block;
   vertical-align: middle;
 }
 
 #tutorial {
-  margin-top: 50px;
   border-collapse: collapse;
   width: 100%;
 }
