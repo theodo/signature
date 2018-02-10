@@ -1,5 +1,9 @@
-$('#theodo-signature').load('signatureTemplates/theodo-signature.html');
-$('#bam-signature').load('signatureTemplates/bam-signature.html');
+$.holdReady(true);
+$('#theodo-signature').load('signatureTemplates/theodo-signature.html', function() {
+  $('#bam-signature').load('signatureTemplates/bam-signature.html', function() {
+    $.holdReady(false);
+  });
+});
 
 $('#theodo-signature-choice').click(function() {
   $('#theodo-signature').addClass('chosen-signature');
