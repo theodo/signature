@@ -8,6 +8,7 @@ $('#theodo-signature-choice').click(function() {
   $('#bam-signature').removeClass('chosen-signature');
   $('#bam-signature').hide();
 
+  $('#mail-form').hide();
   $('#UK-tel-form').show();
   $('#MA-tel-form').show();
   $('#country-form').show();
@@ -20,6 +21,7 @@ $('#bam-signature-choice').click(function() {
   $('#bam-signature').addClass('chosen-signature');
   $('#bam-signature').show();
 
+  $('#mail-form').show();
   $('#UK-tel-form').hide();
   $('#MA-tel-form').hide();
   $('#country-form').hide();
