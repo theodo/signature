@@ -37,7 +37,7 @@ body {
 }
 #m33-planet-choice img {
   max-height: 80px;
-  max-width: 80px;
+  max-width: 120px;
   vertical-align: middle;
 }
 #m33-planet-choice div:hover {
