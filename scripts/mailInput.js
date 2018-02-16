@@ -10,6 +10,7 @@ $(document).ready(function() {
   }
   signatureMail.each(function() {
     $(this).text(mail);
+    $(this).attr('href', 'mailto:'+mail);
   });
   mailInput.val(mail);
 
@@ -17,7 +18,7 @@ $(document).ready(function() {
     var mail = mailInput.val();
     signatureMail.each(function() {
       $(this).text(mail);
-      $(this).attr('href', 'mailto:'+mail)
+      $(this).attr('href', 'mailto:'+mail);
     });
     localStorage.setItem('signatureMail', mail);
   });
