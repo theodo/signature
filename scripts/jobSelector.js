@@ -1,43 +1,61 @@
 $(document).ready(function() {
-  var jobs = [
-    "Developer",
-    "Architect developer",
-    "Deputy CTO",
-    "Chief Technology Officer - CTO",
-    "Business developer & Agile coach",
-    "Project Director",
-    "Operations assistant",
-    "Operations and finance & Agile coach",
-    "Chief Sales Officer",
-    "Chief Growth Officer & Agile coach",
-    "CEO",
-    "Cofounder",
-  ];
+  var jobs = {
+    "Tech": [
+      "Developer",
+      "Architect developer",
+    ],
+    "UX": [
+      "UX designer",
+      "Head of UX",
+    ],
+    "GT & Agile Coach": [
+      "Business developer & Agile coach",
+      "Chief Growth Officer & Agile coach",
+    ],
+    "Ops": [
+      "Operations assistant",
+      "Operations and finance & Agile coach",
+    ],
+    "Sales": [
+      "Project Director", "Directeur Projet",
+      "Directeur commercial", "Head of Sales", "Chief Sales Officer",
+    ],
+    "CTO": [
+      "Deputy CTO",
+      "Chief Technology Officer",
+      "Chief Technology Officer - Cofounder",
+    ],
+    "CEO": [
+      "CEO",
+      "CEO - Cofounder",
+      "Cofounder",
+    ]
+  };
 
   var jobSelector = $('#jobSelector');
   var signatureJob = $('.signatureJob');
 
   function initJob() {
     // add job options
-    for (var i=0; i<jobs.length; i++) {
-      var job = jobs[i];
-      var option = `<option value="${i}">${job}</option>`;
-      jobSelector.append(option);
+    for(jobGroup in jobs) {
+      let jobGroupOptions = `<optgroup label='${jobGroup}'>`;
+      for (var i=0; i<jobs[jobGroup].length; i++) {
+        var job = jobs[jobGroup][i];
+        jobGroupOptions += `<option value="${jobGroup}${i}">${job}</option>`;
+      }
+      jobGroupOptions += "</optgroup>"
+      jobSelector.append(jobGroupOptions);
     }
 
     // get job from localStorage
-    var jobIndex = jobs.length - 1; // last index
-    var job = jobs[jobIndex]; // = cofounder;
-
     var localStorageJob = localStorage.getItem("signatureJob");
-    var localStorageJobIndex = $.inArray(localStorageJob, jobs);
-    if (null !== localStorageJob &&  localStorageJobIndex > -1) {
-      jobIndex = localStorageJobIndex;
-      job = localStorageJob;
+    if(localStorageJob !== null) {
+      var jobGroup = localStorageJob.substr(0, localStorageJob.length - 1);
+      var jobIndex = localStorageJob.substr(localStorageJob.length - 1, localStorageJob.length);
     }
 
     // update selector and signature
-    jobSelector.find(`[value=${jobIndex}]`).attr('selected', true);
+    jobSelector.find(`[value=${jobGroup}${jobIndex}]`).attr('selected', true);
     signatureJob.each(function() {
       $(this).text(job);
     });
@@ -45,10 +63,10 @@ $(document).ready(function() {
   initJob();
 
   jobSelector.change(function() {
-    var job = jobSelector.find(':selected').text();
+    var jobChoice = jobSelector.find(':selected');
     signatureJob.each(function() {
-      $(this).text(job);
+      $(this).text(jobChoice.text());
     });
-    localStorage.setItem("signatureJob", job);
+    localStorage.setItem("signatureJob", jobChoice.val());
   });
 });
