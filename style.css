@@ -1,5 +1,6 @@
 body {
   margin: 20px;
+  font-family: Arial;
 }
 
 #signatureForm {
@@ -47,7 +48,7 @@ body {
 #jobHelp {
   cursor: help;
   margin-left: 1em;
-  background-color: black;
+  background-color: gray;
   color: white;
   border-radius: 50%;
   display: inline-block;
@@ -55,6 +56,14 @@ body {
   width: 20px;
   text-align: center;
   vertical-align: middle;
+}
+
+#jobHelp:hover::after {
+  content: "If your job title is not in the list, contact GiregK";
+  background-color: gray;
+  width: 250px;
+  position: absolute;
+  padding: 10px;
 }
 
 #theodo-signature, #bam-signature {
