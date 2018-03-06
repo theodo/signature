@@ -48,16 +48,18 @@ $(document).ready(function() {
     }
 
     // get job from localStorage
+    var jobGroup = "CEO";
+    var jobIndex = 2; //Cofounder
     var localStorageJob = localStorage.getItem("signatureJob");
     if(localStorageJob !== null) {
-      var jobGroup = localStorageJob.substr(0, localStorageJob.length - 1);
-      var jobIndex = localStorageJob.substr(localStorageJob.length - 1, localStorageJob.length);
+      jobGroup = localStorageJob.substr(0, localStorageJob.length - 1);
+      jobIndex = localStorageJob.substr(localStorageJob.length - 1, localStorageJob.length);
     }
 
     // update selector and signature
     jobSelector.find(`[value=${jobGroup}${jobIndex}]`).attr('selected', true);
     signatureJob.each(function() {
-      $(this).text(job);
+      $(this).text(jobs[jobGroup][jobIndex]);
     });
   }
   initJob();
