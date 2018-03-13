@@ -5,6 +5,7 @@
   <title>M33 Signatures</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
   <h2>Edit your signature</h3>
   <div id="m33-planet-choice">
@@ -56,9 +57,6 @@
 
   <div id="theodo-signature"></div>
   <div id="bam-signature"></div>
-
-  <br/><br/>
-  <p>(<strong>Warning</strong>: never modify your <strong>phone number</strong> in Gmail as it could break the signature's design)</p>
 
   <table id="tutorial">
     <tr>
@@ -145,6 +143,24 @@
       </td>
     </tr>
   </table>
+
+  <div id="warning">
+    <div>
+      <h1>READ ME !!</h1>
+      A few things you need to know to avoid design breaks.
+      <ol>
+        <li><strong>Never modify the content of your signature directly in your mail client.</strong> Always use this page first. (Do it in the console or make a pull request if the form does not cover your use case). Not doing so is a major cause of broken signatures.</li>
+        <li><strong>Firefox breaks the design</strong> when copying the signature to Gmail (though it works fine after the signature has been saved). Use Google Chrome instead.</li>
+        <li><strong>To report a bug in a signature</strong>
+          <ul>
+            <li>Screenshot</li>
+            <li>Client mail (name + version)</li>
+          </ul>
+        </li>
+      </ol>
+      <div id="gotItButton">Got it</div>
+    </div>
+  </div>
 
   <script src="scripts/jquery-3.2.1.min.js"></script>
   <script src="scripts/loadSignatureTemplate.js"></script>

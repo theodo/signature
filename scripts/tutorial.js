@@ -1,3 +1,7 @@
+$('#gotItButton').click(function() {
+  $('#warning').fadeOut();
+});
+
 $('#tutorial input.copySignature').click(function() {
   $('#theodo-signature .hidden').remove();
   selectContent('chosen-signature');
