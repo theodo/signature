@@ -1,35 +1,57 @@
 $(document).ready(function() {
   var jobs = {
-    "Tech": [
-      "Developer",
-      "Architect developer",
-    ],
-    "UX": [
-      "UX designer",
-      "Head of UX",
-    ],
-    "GT & Agile Coach": [
-      "Business developer & Agile coach",
-      "Chief Growth Officer & Agile coach",
-    ],
-    "Ops": [
-      "Operations assistant",
-      "Operations and finance & Agile coach",
-    ],
-    "Sales": [
-      "Project Director", "Directeur Projet",
-      "Directeur commercial", "Head of Sales", "Chief Sales Officer",
-    ],
-    "CTO": [
-      "Deputy CTO",
-      "Chief Technology Officer",
-      "Chief Technology Officer - Cofounder",
-    ],
-    "CEO": [
-      "CEO",
-      "CEO - Cofounder",
-      "Cofounder",
-    ]
+    'dev': {
+      'groupName': 'Devs',
+      'options': [
+        "Developer",
+        "Architect developer",
+      ],
+    },
+    'ux': {
+      'groupName': 'UX',
+      'options': [
+        "UX designer",
+        "Head of UX",
+      ],
+    },
+    'biz': {
+      'groupName': 'GT & Agile Coach',
+      'options': [
+        "Business developer & Agile coach",
+        "Chief Growth Officer & Agile coach",
+      ],
+    },
+    'ops': {
+      'groupName': 'Ops',
+      'options': [
+        "Operations assistant",
+        "Operations and finance & Agile coach",
+      ],
+    },
+    "sales": {
+      'groupName': 'Sales',
+      'options': [
+        "Project Director", "Directeur Projet",
+        "Directeur commercial", "Head of Sales", "Chief Sales Officer",
+      ],
+    },
+    'CTO': {
+      'groupName': 'CTO',
+      'options': [
+        "Deputy CTO",
+        "Chief Technology Officer",
+        "Chief Technology Officer - Cofounder",
+      ],
+    },
+    'CEO': {
+      'groupName': 'CEO',
+      'options': [
+        "CEO",
+        "CEO - Cofounder",
+        "Cofounder & UK CEO",
+        "Cofounder",
+      ],
+    },
   };
 
   var jobSelector = $('#jobSelector');
@@ -38,9 +60,11 @@ $(document).ready(function() {
   function initJob() {
     // add job options
     for(jobGroup in jobs) {
-      let jobGroupOptions = `<optgroup label='${jobGroup}'>`;
-      for (var i=0; i<jobs[jobGroup].length; i++) {
-        var job = jobs[jobGroup][i];
+      let groupName = jobs[jobGroup].groupName;
+      let jobOptions = jobs[jobGroup].options;
+      let jobGroupOptions = `<optgroup label='${groupName}'>`;
+      for (var i=0; i<jobOptions.length; i++) {
+        var job = jobOptions[i];
         jobGroupOptions += `<option value="${jobGroup}${i}">${job}</option>`;
       }
       jobGroupOptions += "</optgroup>"
@@ -48,8 +72,8 @@ $(document).ready(function() {
     }
 
     // get job from localStorage
-    var jobGroup = "CEO";
-    var jobIndex = 2; //Cofounder
+    var jobGroup = "dev";
+    var jobIndex = 0; // Developer
     var localStorageJob = localStorage.getItem("signatureJob");
     if(localStorageJob !== null) {
       jobGroup = localStorageJob.substr(0, localStorageJob.length - 1);
@@ -57,9 +81,18 @@ $(document).ready(function() {
     }
 
     // update selector and signature
-    jobSelector.find(`[value=${jobGroup}${jobIndex}]`).attr('selected', true);
+    var option = jobSelector.find(`[value="${jobGroup}${jobIndex}"]`)
+
+    if(option.length === 0) {
+      // retro compatibility
+      jobGroup = "dev";
+      jobIndex = 0;
+      option = jobSelector.find('[value="dev0"]');
+    }
+
+    option.attr('selected', true);
     signatureJob.each(function() {
-      $(this).text(jobs[jobGroup][jobIndex]);
+      $(this).text(jobs[jobGroup].options[jobIndex]);
     });
   }
   initJob();
