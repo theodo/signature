@@ -1,6 +1,6 @@
 $.holdReady(true);
-$('#theodo-signature').load('signatureTemplates/theodo-signature.html', function() {
-  $('#bam-signature').load('signatureTemplates/bam-signature.html', function() {
+$('#theodo-signature').load('signatureTemplates/theodo-signature.min.html', function() {
+  $('#bam-signature').load('signatureTemplates/bam-signature.min.html', function() {
     $.holdReady(false);
   });
 });

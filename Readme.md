@@ -4,6 +4,13 @@ Render: [https://theodo.github.io/signature/](https://theodo.github.io/signature
 
 Just git clone the repo :)
 
+# Testing and deploying
+
+It is crucial that the signature html be minimized to avoid unwanted white spaces (font-size: 0 does not work).
+
+* `npm install html-minifier-cli -g`
+* When testing and before every commit, don't forget to run `./minimizeSignatures.sh`
+
 **BEWARE**
 Modifying the signature's style is very tricky.
 Indeed, the various mail clients modify the signature's style...
