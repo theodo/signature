@@ -3,6 +3,16 @@ body {
   font-family: Arial;
 }
 
+#upToDate {
+  color: green;
+  display: none;
+}
+
+#notUpToDate {
+  color: red;
+  display: none;
+}
+
 #warning {
   position: fixed;
   top: 0;

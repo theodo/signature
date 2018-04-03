@@ -2,10 +2,23 @@ $('#gotItButton').click(function() {
   $('#warning').fadeOut();
 });
 
+function setSignatureUpdateTime() {
+  var id = $(".chosen-signature").attr("id");
+  var key;
+  if(id === 'theodo-signature') {
+    key = 'theodoLastUpdate';
+  }
+  if(id === 'bam-signature') {
+    key = 'bamLastUpdate';
+  }
+  localStorage.setItem(key, Date.now());
+}
+
 $('#tutorial input.copySignature').click(function() {
   $('#theodo-signature .hidden').remove();
   selectContent('chosen-signature');
   this.style.color = 'green';
+  setSignatureUpdateTime();
 });
 
 $('#tutorial input.copySignatureCode').click(function() {
@@ -22,6 +35,7 @@ $('#tutorial input.copySignatureCode').click(function() {
   selectContent('signatureCode');
   $('.signatureCode')[0].style.display = 'none';
   this.style.color = 'green';
+  setSignatureUpdateTime();
 });
 
 function selectContent(className) {
