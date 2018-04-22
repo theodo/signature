@@ -1,5 +1,5 @@
 var theodoSignatureUpdateTime = new Date('4/3/2018'); //Month/Day/Year
-var bamSignatureUpdateTime = new Date('4/15/2018'); //Month/Day/Year
+var bamSignatureUpdateTime = new Date('4/22/2018'); //Month/Day/Year
 
 function displayWetherSignatureIsUpToDate(key) {
   var signatureUpdateTime, userUpdateTime, parentNode;
