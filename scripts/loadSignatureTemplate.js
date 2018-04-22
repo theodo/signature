@@ -49,6 +49,7 @@ $('#theodo-signature-choice').click(function() {
   $('#MA-tel-form').show();
   $('#country-form').show();
   displayWetherSignatureIsUpToDate('theodo');
+  localStorage.setItem("signatureChoice", "Theodo");
 });
 
 $('#bam-signature-choice').click(function() {
@@ -63,6 +64,12 @@ $('#bam-signature-choice').click(function() {
   $('#MA-tel-form').hide();
   $('#country-form').hide();
   displayWetherSignatureIsUpToDate('bam');
+  localStorage.setItem("signatureChoice", "BAM");
 });
 
-$('#theodo-signature-choice').click();
+var signatureChoice = localStorage.getItem("signatureChoice");
+if(signatureChoice === "BAM") {
+  $('#bam-signature-choice').click();
+} else {
+  $('#theodo-signature-choice').click();
+}
