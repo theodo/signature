@@ -3,10 +3,10 @@ $.holdReady(true);
 var loadPromises = []
 for(var key of Object.keys(config)) {
   var startup = config[key];
-  var rendererId = startup.rendererId;
-  $('#signature-renderer').append(`<div id="${rendererId}" style="display: none;"></div>`);
+  var templateId = key + "-template";
+  $('#signature-renderer').append(`<div id="${templateId}" style="display: none;"></div>`);
   var loadPromise = new Promise(function(resolve, reject) {
-    $(`#${rendererId}`).load(startup.signatureTemplate, resolve);
+    $(`#${templateId}`).load(startup.signatureTemplate, resolve);
   });
   loadPromises.push(loadPromise);
 }
@@ -33,13 +33,13 @@ for(var key of Object.keys(config)) {
 function startupChoice(key) {
   return function() {
     for(var s of Object.keys(config)) {
-      var id = config[s].rendererId;
+      var templateId = s + "-template";
       if(s === key) {
-        $(`#${id}`).addClass('chosen-signature');
-        $(`#${id}`).show();
+        $(`#${templateId}`).addClass('chosen-signature');
+        $(`#${templateId}`).show();
       } else {
-        $(`#${id}`).removeClass('chosen-signature');
-        $(`#${id}`).hide();
+        $(`#${templateId}`).removeClass('chosen-signature');
+        $(`#${templateId}`).hide();
       }
     }
 
