@@ -108,7 +108,7 @@ body {
   padding: 10px;
 }
 
-#theodo-signature, #bam-signature {
+#signature-renderer {
   display: inline-block;
   vertical-align: middle;
 }
