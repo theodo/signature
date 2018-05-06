@@ -64,12 +64,12 @@ body {
   width: 230px;
 }
 
-#m33-planet-choice {
+#m33-startup-choice {
   height: 80px;
   line-height: 80px;
   margin: 0 0 30px 50px;
 }
-#m33-planet-choice div {
+#m33-startup-choice div {
   height: 100%;
   display: inline-block;
   margin-right: 30px;
@@ -78,12 +78,12 @@ body {
   border-bottom: 3px solid transparent;
   cursor: pointer;
 }
-#m33-planet-choice img {
+#m33-startup-choice img {
   max-height: 80px;
   max-width: 120px;
   vertical-align: middle;
 }
-#m33-planet-choice div:hover {
+#m33-startup-choice div:hover {
   border-bottom: 3px solid black;
 }
 

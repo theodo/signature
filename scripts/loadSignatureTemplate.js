@@ -2,10 +2,11 @@
 $.holdReady(true);
 var loadPromises = []
 for(var key of Object.keys(config)) {
-  var rendererId = config[key].rendererId;
+  var startup = config[key];
+  var rendererId = startup.rendererId;
   $('#signature-renderer').append(`<div id="${rendererId}" style="display: none;"></div>`);
   var loadPromise = new Promise(function(resolve, reject) {
-    $(`#${rendererId}`).load(config[key].signatureTemplate, resolve);
+    $(`#${rendererId}`).load(startup.signatureTemplate, resolve);
   });
   loadPromises.push(loadPromise);
 }
@@ -13,35 +14,59 @@ Promise.all(loadPromises).then(function() {$.holdReady(false);});
 
 
 
+// Add Startup choice
+for(var key of Object.keys(config)) {
+  var startup = config[key];
+  $('#m33-startup-choice').append(`<div id="${key}-choice">
+    <img src="${startup.logo}"/>
+  </div>`);
+}
 
 
 
+// Add click listeners on each choice
+for(var key of Object.keys(config)) {
+  var startup = config[key];
+  $(`#${key}-choice`).click(startupChoice(key));
+}
 
+function startupChoice(key) {
+  return function() {
+    for(var s of Object.keys(config)) {
+      var id = config[s].rendererId;
+      if(s === key) {
+        $(`#${id}`).addClass('chosen-signature');
+        $(`#${id}`).show();
+      } else {
+        $(`#${id}`).removeClass('chosen-signature');
+        $(`#${id}`).hide();
+      }
+    }
 
+    if(startup.form.mail) {
+      $('#mail-form').show();
+    } else {
+      $('#mail-form').hide();
+    }
 
+    if(startup.form.country) {
+      $('#UK-tel-form').show();
+      $('#MA-tel-form').show();
+      $('#country-form').show();
+    } else {
+      $('#UK-tel-form').hide();
+      $('#MA-tel-form').hide();
+      $('#country-form').hide();
+    }
 
-
-
-var theodoSignatureUpdateTime = new Date('4/3/2018'); //Month/Day/Year
-var bamSignatureUpdateTime = new Date('4/22/2018'); //Month/Day/Year
+    displayWetherSignatureIsUpToDate(key);
+    localStorage.setItem("signatureChoice", key);
+  }
+}
 
 function displayWetherSignatureIsUpToDate(key) {
-  var signatureUpdateTime, userUpdateTime, parentNode;
-
-  if(key === 'bam') {
-    signatureUpdateTime = bamSignatureUpdateTime;
-    if(localStorage.getItem('bamLastUpdate')) {
-      userUpdateTime = localStorage.getItem('bamLastUpdate');
-      parentNode = 'bamSignatureChoice';
-    }
-  }
-  if(key === 'theodo') {
-    signatureUpdateTime = theodoSignatureUpdateTime;
-    if(localStorage.getItem('theodoLastUpdate')) {
-      userUpdateTime = localStorage.getItem('theodoLastUpdate');
-      parentNode = 'theodoSignatureChoice';
-    }
-  }
+  var signatureUpdateTime = config[key].lastUpdate;
+  var userUpdateTime = localStorage.getItem(`${key.toLowerCase()}LastUpdate`);
 
   $('#lastUpdate').text(signatureUpdateTime.toLocaleDateString());
   $("#upToDate").hide();
@@ -54,39 +79,8 @@ function displayWetherSignatureIsUpToDate(key) {
   }
 }
 
-$('#theodo-signature-choice').click(function() {
-  $('#theodo-signature').addClass('chosen-signature');
-  $('#theodo-signature').show();
 
-  $('#bam-signature').removeClass('chosen-signature');
-  $('#bam-signature').hide();
 
-  $('#mail-form').hide();
-  $('#UK-tel-form').show();
-  $('#MA-tel-form').show();
-  $('#country-form').show();
-  displayWetherSignatureIsUpToDate('theodo');
-  localStorage.setItem("signatureChoice", "Theodo");
-});
-
-$('#bam-signature-choice').click(function() {
-  $('#theodo-signature').removeClass('chosen-signature');
-  $('#theodo-signature').hide();
-
-  $('#bam-signature').addClass('chosen-signature');
-  $('#bam-signature').show();
-
-  $('#mail-form').show();
-  $('#UK-tel-form').hide();
-  $('#MA-tel-form').hide();
-  $('#country-form').hide();
-  displayWetherSignatureIsUpToDate('bam');
-  localStorage.setItem("signatureChoice", "BAM");
-});
-
+// Render last used signature
 var signatureChoice = localStorage.getItem("signatureChoice");
-if(signatureChoice === "BAM") {
-  $('#bam-signature-choice').click();
-} else {
-  $('#theodo-signature-choice').click();
-}
+$(`#${signatureChoice}-choice`).click();
