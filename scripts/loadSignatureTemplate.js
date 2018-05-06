@@ -43,13 +43,13 @@ function startupChoice(key) {
       }
     }
 
-    if(startup.form.mail) {
+    if(config[key].form.mail) {
       $('#mail-form').show();
     } else {
       $('#mail-form').hide();
     }
 
-    if(startup.form.country) {
+    if(config[key].form.country) {
       $('#UK-tel-form').show();
       $('#MA-tel-form').show();
       $('#country-form').show();

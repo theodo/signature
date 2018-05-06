@@ -25,7 +25,7 @@ var config = {
     "lastUpdate": new Date('5/6/2018'),
     "logo": "images/M33Logo.png",
     "form": {
-      "mail": true,
+      "mail": false,
       "country": false
     }
   }
