@@ -1,3 +1,27 @@
+// Load all signatures before anything else
+$.holdReady(true);
+var loadPromises = []
+for(var key of Object.keys(config)) {
+  var rendererId = config[key].rendererId;
+  $('#signature-renderer').append(`<div id="${rendererId}" style="display: none;"></div>`);
+  var loadPromise = new Promise(function(resolve, reject) {
+    $(`#${rendererId}`).load(config[key].signatureTemplate, resolve);
+  });
+  loadPromises.push(loadPromise);
+}
+Promise.all(loadPromises).then(function() {$.holdReady(false);});
+
+
+
+
+
+
+
+
+
+
+
+
 var theodoSignatureUpdateTime = new Date('4/3/2018'); //Month/Day/Year
 var bamSignatureUpdateTime = new Date('4/22/2018'); //Month/Day/Year
 
@@ -29,13 +53,6 @@ function displayWetherSignatureIsUpToDate(key) {
     $("#notUpToDate").show();
   }
 }
-
-$.holdReady(true);
-$('#theodo-signature').load('signatureTemplates/theodo-signature.min.html', function() {
-  $('#bam-signature').load('signatureTemplates/bam-signature.min.html', function() {
-    $.holdReady(false);
-  });
-});
 
 $('#theodo-signature-choice').click(function() {
   $('#theodo-signature').addClass('chosen-signature');
