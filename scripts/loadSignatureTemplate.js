@@ -83,4 +83,5 @@ function displayWetherSignatureIsUpToDate(key) {
 
 // Render last used signature
 var signatureChoice = localStorage.getItem("signatureChoice");
+signatureChoice = signatureChoice ? signatureChoice : 'Theodo';
 $(`#${signatureChoice}-choice`).click();
