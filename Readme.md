@@ -4,6 +4,11 @@ Render: [https://theodo.github.io/signature/](https://theodo.github.io/signature
 
 Just git clone the repo :)
 
+# Updating a signature
+Make your modifications in the `.html` file, then use `./minimizeSignatures.sh` script to generate the `.min.html` file.
+
+You can change the path in `config.js` to make testing easier.
+
 # Testing and deploying
 
 It is crucial that the signature html be minimized to avoid unwanted white spaces (font-size: 0 does not work).
