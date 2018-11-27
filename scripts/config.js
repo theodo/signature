@@ -31,7 +31,7 @@ var config = {
     lastUpdate: new Date("11/26/2018"),
     logo: "images/logoPadok.png",
     form: {
-      mail: true,
+      mail: false,
       country: false
     }
   }
