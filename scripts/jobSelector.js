@@ -1,73 +1,62 @@
 $(document).ready(function() {
   var jobs = {
-    'dev': {
-      'groupName': 'Devs',
-      'options': [
-        "Developer",
-        "Architect developer",
-      ],
+    dev: {
+      groupName: "Devs",
+      options: ["Developer", "Architect developer", "Data Scientist"]
     },
-    'ux': {
-      'groupName': 'UX',
-      'options': [
-        "UX designer",
-        "Head of UX",
-      ],
+    ux: {
+      groupName: "UX",
+      options: ["UX designer", "Head of UX"]
     },
-    'biz': {
-      'groupName': 'GT & Agile Coach',
-      'options': [
+    biz: {
+      groupName: "GT & Agile Coach",
+      options: [
         "Business developer & Agile coach",
-        "Chief Growth Officer & Agile coach",
-      ],
+        "Chief Growth Officer & Agile coach"
+      ]
     },
-    'ops': {
-      'groupName': 'Ops',
-      'options': [
-        "Operations assistant",
-        "Operations and finance & Agile coach",
-      ],
+    ops: {
+      groupName: "Ops",
+      options: ["Operations assistant", "Operations and finance & Agile coach"]
     },
-    "sales": {
-      'groupName': 'Sales',
-      'options': [
-        "Project Director", "Directeur Projet",
-        "Directeur commercial", "Head of Sales", "Chief Sales Officer",
-      ],
+    sales: {
+      groupName: "Sales",
+      options: [
+        "Project Director",
+        "Directeur Projet",
+        "Directeur commercial",
+        "Head of Sales",
+        "Chief Sales Officer"
+      ]
     },
-    'CTO': {
-      'groupName': 'CTO',
-      'options': [
+    CTO: {
+      groupName: "CTO",
+      options: [
         "Deputy CTO",
         "Chief Technology Officer",
-        "Chief Technology Officer - Cofounder",
-      ],
+        "Chief Technology Officer - Cofounder"
+      ]
     },
-    'CEO': {
-      'groupName': 'CEO',
-      'options': [
-        "CEO",
-        "CEO - Cofounder",
-        "Cofounder & UK CEO",
-        "Cofounder",
-      ],
-    },
+    CEO: {
+      groupName: "CEO",
+      options: ["CEO", "CEO - Cofounder", "Cofounder & UK CEO", "Cofounder"]
+    }
   };
 
-  var jobSelector = $('#jobSelector');
-  var signatureJob = $('.signatureJob');
+  var jobSelector = $("#jobSelector");
+  var signatureJob = $(".signatureJob");
 
   function initJob() {
     // add job options
-    for(jobGroup in jobs) {
+    for (jobGroup in jobs) {
       let groupName = jobs[jobGroup].groupName;
       let jobOptions = jobs[jobGroup].options;
       let jobGroupOptions = `<optgroup label='${groupName}'>`;
-      for (var i=0; i<jobOptions.length; i++) {
+      for (var i = 0; i < jobOptions.length; i++) {
         var job = jobOptions[i];
         jobGroupOptions += `<option value="${jobGroup}${i}">${job}</option>`;
       }
-      jobGroupOptions += "</optgroup>"
+      jobGroupOptions += "</optgroup>";
       jobSelector.append(jobGroupOptions);
     }
 
@@ -75,22 +64,25 @@ $(document).ready(function() {
     var jobGroup = "dev";
     var jobIndex = 0; // Developer
     var localStorageJob = localStorage.getItem("signatureJob");
-    if(localStorageJob !== null) {
+    if (localStorageJob !== null) {
       jobGroup = localStorageJob.substr(0, localStorageJob.length - 1);
-      jobIndex = localStorageJob.substr(localStorageJob.length - 1, localStorageJob.length);
+      jobIndex = localStorageJob.substr(
+        localStorageJob.length - 1,
+        localStorageJob.length
+      );
     }
 
     // update selector and signature
-    var option = jobSelector.find(`[value="${jobGroup}${jobIndex}"]`)
+    var option = jobSelector.find(`[value="${jobGroup}${jobIndex}"]`);
 
-    if(option.length === 0) {
+    if (option.length === 0) {
       // retro compatibility
       jobGroup = "dev";
       jobIndex = 0;
       option = jobSelector.find('[value="dev0"]');
     }
 
-    option.attr('selected', true);
+    option.attr("selected", true);
     signatureJob.each(function() {
       $(this).text(jobs[jobGroup].options[jobIndex]);
     });
@@ -98,7 +90,7 @@ $(document).ready(function() {
   initJob();
 
   jobSelector.change(function() {
-    var jobChoice = jobSelector.find(':selected');
+    var jobChoice = jobSelector.find(":selected");
     signatureJob.each(function() {
       $(this).text(jobChoice.text());
     });

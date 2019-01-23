@@ -34,5 +34,14 @@ var config = {
       mail: false,
       country: false
     }
+  },
+  Sicara: {
+    signatureTemplate: "signatureTemplates/sicara-signature.min.html",
+    lastUpdate: new Date("01/31/2019"),
+    logo: "images/logoSicara.png",
+    form: {
+      mail: true,
+      country: false
+    }
   }
 };

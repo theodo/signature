@@ -38,6 +38,21 @@ You need to check that the signature renders correcty when received on:
 - Gmail
 - Outlook 2013+ :warning: most of your problems will come from old versions of Outlook which are still widely used
 
+# Make a signature editable with the form
+
+In the signature template, use the following classes and ids (this needs clean up)
+
+- class `signatureName`
+- class `signatureJob`
+- class `signatureMail`
+- class `signatureFrTel`
+- id `signatureUkTel`
+- id `signatureMaTel`
+- id `frenchAddress`
+- id `ukAddress`
+- See how to handle several phones with id `signatureFrTelGroup`, `signatureUkTelGroup`, and `signatureMaTelGroup` in the code
+- Same with addresses
+
 # About CSS logos
 
 I don't recommend doing a CSS logo, but I did it for BAM (after many struggles) and here's what I learned
