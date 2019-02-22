@@ -16,7 +16,7 @@ NB: it can be usefull to change the config to point to the unminified template f
 
 ## About images embeded in signatures
 
-- **no css resizing** because some mail client don't support it and your logo will be very big (yes, your image will be low quality and there is nothing you can do about it)
+- **no css resizing** because some mail client don't support it and your logo will be very big (yes, your image will be low quality and there is nothing you can do about it). It means that the height/width of the HTML img should be the same as the image itself.
 - if possible, **exclude all text from the image** as it will look very bad due to the low resolution. Instead, add the text in the HTML template.
 - **svg and embeded images (base64) do not work** everywhere (so do not use them)
 - **background images do not work** everywhere
