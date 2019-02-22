@@ -36,6 +36,7 @@ Indeed, the various mail clients modify the signature's style...
 You need to check that the signature renders correcty when received on:
 
 - Gmail
+- Mac mail client
 - Outlook 2013+ :warning: most of your problems will come from old versions of Outlook which are still widely used
 
 # Make a signature editable with the form
