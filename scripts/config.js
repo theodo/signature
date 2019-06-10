@@ -37,10 +37,10 @@ var config = {
   },
   Sicara: {
     signatureTemplate: "signatureTemplates/sicara-signature.min.html",
-    lastUpdate: new Date("01/31/2019"),
+    lastUpdate: new Date("06/10/2019"),
     logo: "images/logoSicara.png",
     form: {
-      mail: true,
+      mail: false,
       country: false
     }
   }
