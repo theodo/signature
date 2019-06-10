@@ -28,6 +28,12 @@ NB: it can be usefull to change the config to point to the unminified template f
 - `npm install html-minifier-cli -g`
 - `./minimizeSignatures.sh`
 
+## Launch locally
+- `npm install serve -g`
+- `serve .`
+- Minimize the signature after each change
+- Change images location to `localhost:5000` if you change the images
+
 ## Definition of done
 
 **BEWARE**
