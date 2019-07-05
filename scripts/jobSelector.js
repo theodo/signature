@@ -17,7 +17,7 @@ $(document).ready(function() {
     },
     ops: {
       groupName: "Ops",
-      options: ["Operations assistant", "Operations and finance & Agile coach"]
+      options: ["Operations assistant", "Operations and finance & Agile coach", "Finance and Operations"]
     },
     sales: {
       groupName: "Sales",
