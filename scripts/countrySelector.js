@@ -19,22 +19,33 @@ $(document).ready(function() {
   function updateSignature(country) {
     var ukAddress = $('#ukAddress');
     var frenchAddress = $('#frenchAddress');
+    var usAddress = $('#usAddress');
     var logo = $('#logo');
     var frTel = $('#signatureFrTelGroup');
     var ukTel = $('#signatureUkTelGroup');
+    var usTel = $('#signatureUsTelGroup');
 
-    if(country == 'UK') {
+    if (country == 'UK') {
       ukAddress.removeClass('hidden');
       frenchAddress.addClass('hidden');
+      usAddress.addClass('hidden');
       logo.attr('href', 'https://www.theodo.co.uk');
       //reorder tels
-      ukTel.insertBefore(frTel);
+      ukTel.insertBefore($("[id$=TelGroup]").first());
+    } else if (country == 'US') {
+      ukAddress.addClass('hidden');
+      frenchAddress.addClass('hidden');
+      usAddress.removeClass('hidden');
+      logo.attr('href', 'https://www.theodo.com/');
+      //reorder tels
+      usTel.insertBefore($("[id$=TelGroup]").first());
     } else {
       ukAddress.addClass('hidden');
       frenchAddress.removeClass('hidden');
+      usAddress.addClass('hidden');
       logo.attr('href', 'https://www.theodo.fr');
       //reorder tels
-      frTel.insertBefore(ukTel);
+      frTel.insertBefore($("[id$=TelGroup]").first());
     }
   }
 });
