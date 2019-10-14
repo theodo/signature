@@ -2,14 +2,17 @@ $(document).ready(function() {
   var frTelInput = $('#frTelInput');
   var ukTelInput = $('#ukTelInput');
   var maTelInput = $('#maTelInput');
+  var usTelInput = $('#usTelInput');
 
   var signatureFrTel = $('.signatureFrTel');
   var signatureUkTel = $('#signatureUkTel');
   var signatureMaTel = $('#signatureMaTel');
+  var signatureUsTel = $('#signatureUsTel');
 
   var signatureFrTelGroup = $('#signatureFrTelGroup');
   var signatureUkTelGroup = $('#signatureUkTelGroup');
   var signatureMaTelGroup = $('#signatureMaTelGroup');
+  var signatureUsTelGroup = $('#signatureUsTelGroup');
 
   function initTelephones() {
     var frTelValue = '6 12 34 56 78';
@@ -36,6 +39,14 @@ $(document).ready(function() {
     maTelInput.val(maTelValue);
     updateTelephone('signatureMaTel', maTelInput, signatureMaTelGroup, signatureMaTel, true, '212');
 
+    var usTelValue = '';
+    var localStorageUsTel = localStorage.getItem('signatureUsTel');
+    if (null !== localStorageUsTel) {
+      usTelValue = localStorageUsTel;
+    }
+    usTelInput.val(usTelValue);
+    updateTelephone('signatureUsTel', usTelInput, signatureUsTelGroup, signatureUsTel, true, '1');
+
     displayOrHideCountries();
   }
   initTelephones();
@@ -50,6 +61,10 @@ $(document).ready(function() {
   });
   ukTelInput.on('input', function() {
     updateTelephone('signatureUkTel', ukTelInput, signatureUkTelGroup, signatureUkTel, false, '44');
+    displayOrHideCountries();
+  });
+  usTelInput.on('input', function() {
+    updateTelephone('signatureUsTel', usTelInput, signatureUsTelGroup, signatureUsTel, false, '1');
     displayOrHideCountries();
   });
 
