@@ -43,5 +43,14 @@ var config = {
       mail: false,
       country: false
     }
+  },
+  Sipios: {
+    signatureTemplate: "signatureTemplates/sipios-signature.min.html",
+    lastUpdate: new Date("11/02/2020"),
+    logo: "images/logo-sipios.png",
+    form: {
+      mail: false,
+      country: false
+    }
   }
 };
