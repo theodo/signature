@@ -52,5 +52,14 @@ var config = {
       mail: false,
       country: false
     }
+  },
+  Hokla: {
+    signatureTemplate: "signatureTemplates/hokla-signature.min.html",
+    lastUpdate: new Date("10/05/2021"),
+    logo: "images/logoHokla.png",
+    form: {
+      mail: false,
+      country: false
+    }
   }
 };
