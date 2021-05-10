@@ -6,5 +6,6 @@ htmlmin -o signatureTemplates/m33-signature.min.html signatureTemplates/m33-sign
 htmlmin -o signatureTemplates/padok-signature.min.html signatureTemplates/padok-signature.html
 htmlmin -o signatureTemplates/sicara-signature.min.html signatureTemplates/sicara-signature.html
 htmlmin -o signatureTemplates/sipios-signature.min.html signatureTemplates/sipios-signature.html
+htmlmin -o signatureTemplates/hokla-signature.min.html signatureTemplates/hokla-signature.html
 echo 'signature templates minimized'
 echo 'You need to update signature update dates in config.js'
