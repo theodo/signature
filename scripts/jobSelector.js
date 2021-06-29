@@ -12,7 +12,8 @@ $(document).ready(function() {
       groupName: "GT & Agile Coach",
       options: [
         "Business developer & Agile coach",
-        "Chief Growth Officer & Agile coach"
+        "Chief Growth Officer & Agile coach",
+        "Growth Manager"
       ]
     },
     ops: {
