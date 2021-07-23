@@ -40,6 +40,10 @@ $(document).ready(function() {
     CEO: {
       groupName: "CEO",
       options: ["CEO", "CEO - Cofounder", "Cofounder & UK CEO", "Cofounder"]
+    },
+    tribe: {
+      groupName: "Tribe",
+      options: ["Head of Kumo - Serverless Expertise by Theodo"]
     }
   };
 
