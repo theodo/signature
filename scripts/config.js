@@ -61,5 +61,14 @@ var config = {
       mail: false,
       country: false
     }
-  }
+  },
+  Kumo: {
+    signatureTemplate: "signatureTemplates/kumo-signature.min.html",
+    lastUpdate: new Date("07/23/2021"), //Month/Day/Year
+    logo: "images/logoKumo.png",
+    form: {
+      mail: false,
+      country: false
+    }
+  },
 };
