@@ -18,7 +18,8 @@ $(document).ready(function() {
 
   function updateSignature(country) {
     var ukAddress = $('#ukAddress');
-    var frenchAddress = $('#frenchAddress');
+    var frenchLyonAddress = $('#frenchLyonAddress');
+    var frenchParisAddress = $('#frenchParisAddress');
     var usAddress = $('#usAddress');
     var logo = $('#logo');
     var frTel = $('#signatureFrTelGroup');
@@ -27,21 +28,32 @@ $(document).ready(function() {
 
     if (country == 'UK') {
       ukAddress.removeClass('hidden');
-      frenchAddress.addClass('hidden');
+      frenchParisAddress.addClass('hidden');
+      frenchLyonAddress.addClass('hidden');
       usAddress.addClass('hidden');
       logo.attr('href', 'https://www.theodo.co.uk');
       //reorder tels
       ukTel.insertBefore($("[id$=TelGroup]").first());
     } else if (country == 'US') {
       ukAddress.addClass('hidden');
-      frenchAddress.addClass('hidden');
+      frenchParisAddress.addClass('hidden');
+      frenchLyonAddress.addClass('hidden');
       usAddress.removeClass('hidden');
       logo.attr('href', 'https://www.theodo.com/');
       //reorder tels
       usTel.insertBefore($("[id$=TelGroup]").first());
-    } else {
+    } else if(country == 'FR-Lyon'){
       ukAddress.addClass('hidden');
-      frenchAddress.removeClass('hidden');
+      frenchParisAddress.addClass('hidden');
+      frenchLyonAddress.removeClass('hidden');
+      usAddress.addClass('hidden');
+      logo.attr('href', 'https://www.theodo.fr');
+      //reorder tels
+      frTel.insertBefore($("[id$=TelGroup]").first());
+    }else{
+      ukAddress.addClass('hidden');
+      frenchParisAddress.removeClass('hidden');
+      frenchLyonAddress.addClass('hidden');
       usAddress.addClass('hidden');
       logo.attr('href', 'https://www.theodo.fr');
       //reorder tels
