@@ -1,7 +1,7 @@
 var config = {
   Theodo: {
     signatureTemplate: "signatureTemplates/theodo-signature.min.html",
-    lastUpdate: new Date("07/01/2021"), //Month/Day/Year
+    lastUpdate: new Date("09/13/2021"), //Month/Day/Year
     logo: "images/logoTheodo.png",
     form: {
       mail: false,

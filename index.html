@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8">
   <title>M33 Signatures</title>
@@ -8,169 +9,194 @@
 
 <body>
   <h2>Edit your signature</h3>
-  <p>
-    Last signature update on <span id='lastUpdate'></span>
-    <span id="upToDate"> => up to date :)</span>
-    <span id="notUpToDate"> => outdated !</span>
-  <p>
-  <div id="m33-startup-choice"></div>
-  <table id="signatureForm">
-    <tr>
-      <td>Firstname + Name</td>
-      <td></td>
-      <td><input type="text" id="nameInput"/></td>
-    </tr>
-    <tr>
-      <td>Job Title<span id="jobHelp">?</span></td>
-      <td></td>
-      <td><select id="jobSelector"></select></td>
-    </tr>
-    <tr id="mail-form">
-      <td>E-mail</td>
-      <td></td>
-      <td><input type="text" id="mailInput"/></td>
-    </tr>
-    <tr>
-      <td>French Tel</td>
-      <td>+33</td>
-      <td><input type="tel" id="frTelInput"/></td>
-    </tr>
-    <tr id="UK-tel-form">
-      <td>UK Tel</td>
-      <td>+44</td>
-      <td><input type="tel" id="ukTelInput"/></td>
-    </tr>
-    <tr id="MA-tel-form">
-      <td>Morocco Tel</td>
-      <td>+212</td>
-      <td><input type="tel" id="maTelInput"/></td>
-    </tr>
-    <tr id="US-tel-form">
-      <td>US Tel</td>
-      <td>+1</td>
-      <td><input type="tel" id="usTelInput"/></td>
-    </tr>
-    <tr id="country-form">
-      <td>Country</td>
-      <td></td>
-      <td>
-        <select id="countrySelector">
-          <option value="France">France</option>
-          <option value="UK">UK</option>
-          <option value="US">US</option>
-        </select>
-      </td>
-    </tr>
-  </table>
+    <p>
+      Last signature update on <span id='lastUpdate'></span>
+      <span id="upToDate"> => up to date :)</span>
+      <span id="notUpToDate"> => outdated !</span>
+    <p>
+    <div id="m33-startup-choice"></div>
+    <table id="signatureForm">
+      <tr>
+        <td>Firstname + Name</td>
+        <td></td>
+        <td><input type="text" id="nameInput" /></td>
+      </tr>
+      <tr>
+        <td>Job Title<span id="jobHelp">?</span></td>
+        <td></td>
+        <td><select id="jobSelector"></select></td>
+      </tr>
+      <tr id="mail-form">
+        <td>E-mail</td>
+        <td></td>
+        <td><input type="text" id="mailInput" /></td>
+      </tr>
+      <tr>
+        <td>French Tel</td>
+        <td>+33</td>
+        <td><input type="tel" id="frTelInput" /></td>
+      </tr>
+      <tr id="UK-tel-form">
+        <td>UK Tel</td>
+        <td>+44</td>
+        <td><input type="tel" id="ukTelInput" /></td>
+      </tr>
+      <tr id="MA-tel-form">
+        <td>Morocco Tel</td>
+        <td>+212</td>
+        <td><input type="tel" id="maTelInput" /></td>
+      </tr>
+      <tr id="US-tel-form">
+        <td>US Tel</td>
+        <td>+1</td>
+        <td><input type="tel" id="usTelInput" /></td>
+      </tr>
+      <tr id="country-form">
+        <td>Country ( - City )</td>
+        <td></td>
+        <td>
+          <select id="countrySelector">
+            <option value="FR-Paris">France - Paris</option>
+            <option value="FR-Lyon">France - Lyon</option>
+            <option value="UK">UK</option>
+            <option value="US">US</option>
+          </select>
+        </td>
+      </tr>
+    </table>
 
-  <div id="signature-renderer"></div>
+    <div id="signature-renderer"></div>
 
-  <table id="tutorial">
-    <tr>
-      <td><h3>Gmail</h3></td>
-      <td>
-        <ol>
-          <li>Fill the form !</li>
-          <li><input type="button" value="Copy your signature" class="copySignature"/></li>
-          <li>In your <a href="https://mail.google.com/mail/u/0/#settings/general" target="_blank">Gmail settings</a>, you will have to :
-            <ol>
-              <li>Paste your signature</li>
-              <li><strong>Check</strong> the box below the signature (see picture)</li>
-              <li>Save your changes</li>
-            </ol>
-          </li>
-          <li><strong>Refresh</strong> all your Gmail tabs</li>
-        </ol>
-        <img src="images/tutorial-images/gmail.png"/>
-      </td>
-    </tr>
-    <tr>
-      <td><h3>Mail on iOS</h3></td>
-      <td>
-        <ol>
-          <li>Fill the form !</li>
-          <li><input type="button" value="Copy your signature" class="copySignature"/></li>
-          <li>Paste it to Settings/Mail/Signature.</li>
-          <li>The signature will appear unformated, so <strong>shake your iPhone</strong> to undo automatic modifications. It should now appear correctly.</li>
-          <li>Just quit your settings</li>
-        </ol>
-      </td>
-    </tr>
-    <tr>
-      <td><h3>Inbox</h3></td>
-      <td>
-        <ol>
-          <li>Fill the form !</li>
-          <li><input type="button" value="Copy your signature" class="copySignature"/></li>
-          <li>Paste it in your Inbox settings</li>
-          <li><strong>Refresh</strong> all your Inbox tabs</li>
-        </ol>
-      </td>
-    </tr>
-    <tr>
-      <td><h3>Mail on OSX</h3></td>
-      <td>
-        <ol>
-          <li>Fill the form !</li>
-          <li><input type="button" value="Copy your signature's code" class="copySignatureCode"/></li>
-          <li>In Mail (skip this if you already have a signature)
-            <ul>
-              <li><input type="checkbox"/> Open the Preference pane &gt; Signatures tab</li>
-              <li><input type="checkbox"/> Add a signature to your Theodo account by clicking on the + button. (The content of the signature does not matter).</li>
-              <li><input type="checkbox"/> <strong>Close</strong> the Preference pane to save the signature</li>
-            </ul>
-          </li>
-          <li>In your finder
-            <ul>
-              <li><input type="checkbox"/> Press Cmd + G, and go to ~/Library/Mail</li>
-              <li><input type="checkbox"/> In the open folder, there should be a folder starting with 'V' ('V2, 'V3', 'V4') depending on your version of Mac OS. Open this folder, then MailData then Signatures</li>
-              <li><input type="checkbox"/> In the list of files with extension <em>.mailsignature</em>, find the signature you just added (find it by date of creation if needed) or the file corresponding to the signature you are trying to update.</li>
-              <li><input type="checkbox"/> Open this signature file with TextEdit and remove the second part as in the picture</li>
-              <li> Paste the signature's code in the file</li>
-              <li><input type="checkbox"/> Save and close the file</li>
-              <li><input type="checkbox"/> Open the file information panel (Cmd + i on file highlighted) and <strong>lock</strong> the file to prevent Mail from erasing your signature</li>
-            </ul>
-          </li>
-          <li><strong>Restart Mail</strong></li>
-          <li>If it didn't work, try deleting the Signatures folder (you will loose all signatures for all accounts), restarting Mail, and restarting at step 1.</li>
-        </ol>
-        <img src="images/tutorial-images/appleMail.png"/>
-      </td>
-    </tr>
-    <tr>
-      <td><h3>Hubspot</h3></td>
-      <td>
-        <ol>
-          <li>Fill the form !</li>
-          <li><input type="button" value="Copy your signature's code" class="copySignatureCode"/></li>
-          <li>Paste it in Hubspot, Profile & Preferences > Edit Signature > HTML tab</li>
-          <li>Save</li>
-        </ol>
-        <img src="images/tutorial-images/hubspot.jpeg"/>
-      </td>
-    </tr>
-  </table>
+    <table id="tutorial">
+      <tr>
+        <td>
+          <h3>Gmail</h3>
+        </td>
+        <td>
+          <ol>
+            <li>Fill the form !</li>
+            <li><input type="button" value="Copy your signature" class="copySignature" /></li>
+            <li>In your <a href="https://mail.google.com/mail/u/0/#settings/general" target="_blank">Gmail settings</a>,
+              you will have to :
+              <ol>
+                <li>Paste your signature</li>
+                <li><strong>Check</strong> the box below the signature (see picture)</li>
+                <li>Save your changes</li>
+              </ol>
+            </li>
+            <li><strong>Refresh</strong> all your Gmail tabs</li>
+          </ol>
+          <img src="images/tutorial-images/gmail.png" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h3>Mail on iOS</h3>
+        </td>
+        <td>
+          <ol>
+            <li>Fill the form !</li>
+            <li><input type="button" value="Copy your signature" class="copySignature" /></li>
+            <li>Paste it to Settings/Mail/Signature.</li>
+            <li>The signature will appear unformated, so <strong>shake your iPhone</strong> to undo automatic
+              modifications. It should now appear correctly.</li>
+            <li>Just quit your settings</li>
+          </ol>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h3>Inbox</h3>
+        </td>
+        <td>
+          <ol>
+            <li>Fill the form !</li>
+            <li><input type="button" value="Copy your signature" class="copySignature" /></li>
+            <li>Paste it in your Inbox settings</li>
+            <li><strong>Refresh</strong> all your Inbox tabs</li>
+          </ol>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h3>Mail on OSX</h3>
+        </td>
+        <td>
+          <ol>
+            <li>Fill the form !</li>
+            <li><input type="button" value="Copy your signature's code" class="copySignatureCode" /></li>
+            <li>In Mail (skip this if you already have a signature)
+              <ul>
+                <li><input type="checkbox" /> Open the Preference pane &gt; Signatures tab</li>
+                <li><input type="checkbox" /> Add a signature to your Theodo account by clicking on the + button. (The
+                  content of the signature does not matter).</li>
+                <li><input type="checkbox" /> <strong>Close</strong> the Preference pane to save the signature</li>
+              </ul>
+            </li>
+            <li>In your finder
+              <ul>
+                <li><input type="checkbox" /> Press Cmd + G, and go to ~/Library/Mail</li>
+                <li><input type="checkbox" /> In the open folder, there should be a folder starting with 'V' ('V2, 'V3',
+                  'V4') depending on your version of Mac OS. Open this folder, then MailData then Signatures</li>
+                <li><input type="checkbox" /> In the list of files with extension <em>.mailsignature</em>, find the
+                  signature you just added (find it by date of creation if needed) or the file corresponding to the
+                  signature you are trying to update.</li>
+                <li><input type="checkbox" /> Open this signature file with TextEdit and remove the second part as in
+                  the picture</li>
+                <li> Paste the signature's code in the file</li>
+                <li><input type="checkbox" /> Save and close the file</li>
+                <li><input type="checkbox" /> Open the file information panel (Cmd + i on file highlighted) and
+                  <strong>lock</strong> the file to prevent Mail from erasing your signature
+                </li>
+              </ul>
+            </li>
+            <li><strong>Restart Mail</strong></li>
+            <li>If it didn't work, try deleting the Signatures folder (you will loose all signatures for all accounts),
+              restarting Mail, and restarting at step 1.</li>
+          </ol>
+          <img src="images/tutorial-images/appleMail.png" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h3>Hubspot</h3>
+        </td>
+        <td>
+          <ol>
+            <li>Fill the form !</li>
+            <li><input type="button" value="Copy your signature's code" class="copySignatureCode" /></li>
+            <li>Paste it in Hubspot, Profile & Preferences > Edit Signature > HTML tab</li>
+            <li>Save</li>
+          </ol>
+          <img src="images/tutorial-images/hubspot.jpeg" />
+        </td>
+      </tr>
+    </table>
 
-  <div id="warning">
-    <div>
-      <h1>READ ME !!</h1>
-      A few things you need to know to avoid design breaks.
-      <ol>
-        <li><strong>Never modify the content of your signature directly in your mail client.</strong> Always use this page first. (Do it in the console or make a pull request if the form does not cover your use case). Not doing so is a major cause of broken signatures.</li>
-        <li><strong>Firefox / Thunderbird</strong> break the design when copying the signature to Gmail (though it works fine after the signature has been saved). Use Google Chrome instead.</li>
-      </ol>
-      <div id="gotItButton">Got it</div>
+    <div id="warning">
+      <div>
+        <h1>READ ME !!</h1>
+        A few things you need to know to avoid design breaks.
+        <ol>
+          <li><strong>Never modify the content of your signature directly in your mail client.</strong> Always use this
+            page first. (Do it in the console or make a pull request if the form does not cover your use case). Not
+            doing so is a major cause of broken signatures.</li>
+          <li><strong>Firefox / Thunderbird</strong> break the design when copying the signature to Gmail (though it
+            works fine after the signature has been saved). Use Google Chrome instead.</li>
+        </ol>
+        <div id="gotItButton">Got it</div>
+      </div>
     </div>
-  </div>
 
-  <script src="scripts/jquery-3.2.1.min.js"></script>
-  <script src="scripts/config.js"></script>
-  <script src="scripts/loadSignatureTemplate.js"></script>
-  <script src="scripts/nameInput.js"></script>
-  <script src="scripts/mailInput.js"></script>
-  <script src="scripts/jobSelector.js"></script>
-  <script src="scripts/telephoneInput.js"></script>
-  <script src="scripts/countrySelector.js"></script>
-  <script src="scripts/tutorial.js"></script>
+    <script src="scripts/jquery-3.2.1.min.js"></script>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/loadSignatureTemplate.js"></script>
+    <script src="scripts/nameInput.js"></script>
+    <script src="scripts/mailInput.js"></script>
+    <script src="scripts/jobSelector.js"></script>
+    <script src="scripts/telephoneInput.js"></script>
+    <script src="scripts/countrySelector.js"></script>
+    <script src="scripts/tutorial.js"></script>
 </body>
+
 </html>
