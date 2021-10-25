@@ -71,4 +71,13 @@ var config = {
       country: false
     }
   },
+  Aleios: {
+    signatureTemplate: "signatureTemplates/aleios-signature.min.html",
+    lastUpdate: new Date("10/25/2021"), //Month/Day/Year
+    logo: "images/aleiosLogo.png",
+    form: {
+      mail: false,
+      country: true
+    }
+  },
 };
