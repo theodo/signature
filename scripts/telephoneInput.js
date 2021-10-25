@@ -5,7 +5,7 @@ $(document).ready(function() {
   var usTelInput = $('#usTelInput');
 
   var signatureFrTel = $('.signatureFrTel');
-  var signatureUkTel = $('#signatureUkTel');
+  var signatureUkTel = $('.signatureUkTel');
   var signatureMaTel = $('#signatureMaTel');
   var signatureUsTel = $('#signatureUsTel');
 
