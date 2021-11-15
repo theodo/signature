@@ -55,7 +55,7 @@ var config = {
   },
   Hokla: {
     signatureTemplate: "signatureTemplates/hokla-signature.min.html",
-    lastUpdate: new Date("18/05/2021"),
+    lastUpdate: new Date("11/15/2021"), //Month/Day/Year
     logo: "images/logoHokla.png",
     form: {
       mail: false,
