@@ -2,11 +2,11 @@ $(document).ready(function() {
   var jobs = {
     dev: {
       groupName: "Devs",
-      options: ["Developer", "Architect developer", "Data Scientist", "Lead Data Scientist", "Tech Lead"]
+      options: ["Developer", "Architect developer", "Data Scientist", "Lead Data Scientist", "Tech Lead", "Engineering Manager"]
     },
     ux: {
       groupName: "UX",
-      options: ["UX designer", "Head of UX"]
+      options: ["UX designer", "Head of UX", "Lead UX/UI designer"]
     },
     biz: {
       groupName: "GT & Agile Coach",
@@ -17,7 +17,7 @@ $(document).ready(function() {
     },
     ops: {
       groupName: "Ops",
-      options: ["Operations assistant", "Operations and finance & Agile coach", "Finance and Operations"]
+      options: ["Operations assistant", "Operations and finance & Agile coach", "Finance and Operations", "Head of Finance"]
     },
     sales: {
       groupName: "Sales",
@@ -34,7 +34,8 @@ $(document).ready(function() {
       options: [
         "Deputy CTO",
         "Chief Technology Officer",
-        "Chief Technology Officer - Cofounder"
+        "Chief Technology Officer - Cofounder",
+        "VP of Engineering"
       ]
     },
     CEO: {
@@ -44,6 +45,10 @@ $(document).ready(function() {
     tribe: {
       groupName: "Tribe",
       options: ["Head of Kumo - Serverless Expertise by Theodo"]
+    },
+    marketing: {
+      groupName: "Marketing",
+      options: ["Marketing Manager", "Marketing Digital"]
     }
   };
 
