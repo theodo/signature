@@ -28,7 +28,7 @@ var config = {
   },
   Padok: {
     signatureTemplate: "signatureTemplates/padok-signature.min.html",
-    lastUpdate: new Date("11/26/2018"),
+    lastUpdate: new Date("11/17/2021"),
     logo: "images/logoPadok.png",
     form: {
       mail: false,
