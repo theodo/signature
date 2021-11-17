@@ -10,7 +10,7 @@ var config = {
   },
   BAM: {
     signatureTemplate: "signatureTemplates/bam-signature.min.html",
-    lastUpdate: new Date("4/22/2018"),
+    lastUpdate: new Date("11/17/2021"),
     logo: "images/bamLogo.jpg",
     form: {
       mail: true,
@@ -28,7 +28,7 @@ var config = {
   },
   Padok: {
     signatureTemplate: "signatureTemplates/padok-signature.min.html",
-    lastUpdate: new Date("11/26/2018"),
+    lastUpdate: new Date("11/17/2021"),
     logo: "images/logoPadok.png",
     form: {
       mail: false,
@@ -55,7 +55,7 @@ var config = {
   },
   Hokla: {
     signatureTemplate: "signatureTemplates/hokla-signature.min.html",
-    lastUpdate: new Date("18/05/2021"),
+    lastUpdate: new Date("11/15/2021"), //Month/Day/Year
     logo: "images/logoHokla.png",
     form: {
       mail: false,
