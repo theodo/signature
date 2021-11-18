@@ -101,7 +101,7 @@ body {
 }
 
 #jobHelp:hover::after {
-  content: "If your job title is not in the list, contact GiregK";
+  content: "If your job title is not in the list, contact MaximeCr (Hokla) or use the Notion page (link above)";
   background-color: gray;
   width: 250px;
   position: absolute;
