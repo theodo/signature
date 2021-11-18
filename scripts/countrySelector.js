@@ -20,6 +20,7 @@ $(document).ready(function() {
     var ukAddress = $('#ukAddress');
     var frenchLyonAddress = $('#frenchLyonAddress');
     var frenchParisAddress = $('#frenchParisAddress');
+    var frenchNantesAddress = $('#frenchNantesAddress');
     var usAddress = $('#usAddress');
     var logo = $('#logo');
     var frTel = $('#signatureFrTelGroup');
@@ -30,6 +31,7 @@ $(document).ready(function() {
       ukAddress.removeClass('hidden');
       frenchParisAddress.addClass('hidden');
       frenchLyonAddress.addClass('hidden');
+      frenchNantesAddress.addClass('hidden');
       usAddress.addClass('hidden');
       logo.attr('href', 'https://www.theodo.co.uk');
       //reorder tels
@@ -38,6 +40,7 @@ $(document).ready(function() {
       ukAddress.addClass('hidden');
       frenchParisAddress.addClass('hidden');
       frenchLyonAddress.addClass('hidden');
+      frenchNantesAddress.addClass('hidden');
       usAddress.removeClass('hidden');
       logo.attr('href', 'https://www.theodo.com/');
       //reorder tels
@@ -46,6 +49,16 @@ $(document).ready(function() {
       ukAddress.addClass('hidden');
       frenchParisAddress.addClass('hidden');
       frenchLyonAddress.removeClass('hidden');
+      frenchNantesAddress.addClass('hidden');
+      usAddress.addClass('hidden');
+      logo.attr('href', 'https://www.theodo.fr');
+      //reorder tels
+      frTel.insertBefore($("[id$=TelGroup]").first());
+    } else if(country == 'FR-Nantes'){
+      ukAddress.addClass('hidden');
+      frenchParisAddress.addClass('hidden');
+      frenchLyonAddress.addClass('hidden');
+      frenchNantesAddress.removeClass('hidden');
       usAddress.addClass('hidden');
       logo.attr('href', 'https://www.theodo.fr');
       //reorder tels
@@ -54,6 +67,7 @@ $(document).ready(function() {
       ukAddress.addClass('hidden');
       frenchParisAddress.removeClass('hidden');
       frenchLyonAddress.addClass('hidden');
+      frenchNantesAddress.addClass('hidden');
       usAddress.addClass('hidden');
       logo.attr('href', 'https://www.theodo.fr');
       //reorder tels
