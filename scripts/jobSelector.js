@@ -45,7 +45,7 @@ $(document).ready(function() {
     },
     tribe: {
       groupName: "Tribe",
-      options: ["Head of Kumo - Serverless Expertise by Theodo", "Head of Theodo Nantes"]
+      options: ["Head of Kumo - Serverless Expertise by Theodo", "Head of Theodo Nantes", "Head of Theodo Lyon"]
     },
     marketing: {
       groupName: "Marketing",
