@@ -2,7 +2,7 @@ $(document).ready(function() {
   var jobs = {
     dev: {
       groupName: "Devs",
-      options: ["Developer", "Architect developer", "Data Scientist", "Lead Data Scientist", "Tech Lead", "Engineering Manager"]
+      options: ["Developer", "Architect developer", "Data Scientist", "Data Engineer", "Lead Data Scientist", "Tech Lead", "Engineering Manager"]
     },
     ux: {
       groupName: "UX",
