@@ -1,24 +1,38 @@
-$(document).ready(function() {
+$(document).ready(function () {
   var jobs = {
     dev: {
       groupName: "Devs",
-      options: ["Developer", "Architect developer", "Data Scientist", "Data Engineer", "Lead Data Scientist", "Tech Lead", "Engineering Manager"]
+      options: [
+        "Developer",
+        "Architect developer",
+        "Data Scientist",
+        "Data Engineer",
+        "Lead Data Scientist",
+        "Tech Lead",
+        "Engineering Manager",
+      ],
     },
     ux: {
       groupName: "UX",
-      options: ["UX designer", "Head of UX", "Lead UX/UI designer"]
+      options: ["UX designer", "Head of UX", "Lead UX/UI designer"],
     },
     biz: {
       groupName: "GT & Agile Coach",
       options: [
         "Business developer & Agile coach",
         "Chief Growth Officer & Agile coach",
-        "Growth Manager"
-      ]
+        "Growth Manager",
+        "Product Owner & Business Developer",
+      ],
     },
     ops: {
       groupName: "Ops",
-      options: ["Operations assistant", "Operations and finance & Agile coach", "Finance and Operations", "Head of Finance"]
+      options: [
+        "Operations assistant",
+        "Operations and finance & Agile coach",
+        "Finance and Operations",
+        "Head of Finance",
+      ],
     },
     sales: {
       groupName: "Sales",
@@ -27,8 +41,8 @@ $(document).ready(function() {
         "Directeur Projet",
         "Directeur commercial",
         "Head of Sales",
-        "Chief Sales Officer"
-      ]
+        "Chief Sales Officer",
+      ],
     },
     CTO: {
       groupName: "CTO",
@@ -36,21 +50,25 @@ $(document).ready(function() {
         "Deputy CTO",
         "Chief Technology Officer",
         "Chief Technology Officer - Cofounder",
-        "VP of Engineering"
-      ]
+        "VP of Engineering",
+      ],
     },
     CEO: {
       groupName: "CEO",
-      options: ["CEO", "CEO - Cofounder", "Cofounder & UK CEO", "Cofounder"]
+      options: ["CEO", "CEO - Cofounder", "Cofounder & UK CEO", "Cofounder"],
     },
     tribe: {
       groupName: "Tribe",
-      options: ["Head of Kumo - Serverless Expertise by Theodo", "Head of Theodo Nantes", "Head of Theodo Lyon"]
+      options: [
+        "Head of Kumo - Serverless Expertise by Theodo",
+        "Head of Theodo Nantes",
+        "Head of Theodo Lyon",
+      ],
     },
     marketing: {
       groupName: "Marketing",
-      options: ["Marketing Manager", "Marketing Digital"]
-    }
+      options: ["Marketing Manager", "Marketing Digital"],
+    },
   };
 
   var jobSelector = $("#jobSelector");
@@ -93,15 +111,15 @@ $(document).ready(function() {
     }
 
     option.attr("selected", true);
-    signatureJob.each(function() {
+    signatureJob.each(function () {
       $(this).text(jobs[jobGroup].options[jobIndex]);
     });
   }
   initJob();
 
-  jobSelector.change(function() {
+  jobSelector.change(function () {
     var jobChoice = jobSelector.find(":selected");
-    signatureJob.each(function() {
+    signatureJob.each(function () {
       $(this).text(jobChoice.text());
     });
     localStorage.setItem("signatureJob", jobChoice.val());
