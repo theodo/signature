@@ -32,6 +32,7 @@ $(document).ready(function () {
         "Operations and finance & Agile coach",
         "Finance and Operations",
         "Head of Finance",
+        "Chief Operating Officer",
       ],
     },
     sales: {
