@@ -22,6 +22,7 @@ $(document).ready(function () {
         "Business developer & Agile coach",
         "Chief Growth Officer & Agile coach",
         "Growth Manager",
+        "Product Owner & Business Developer",
       ],
     },
     ops: {
