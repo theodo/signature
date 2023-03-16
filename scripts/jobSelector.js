@@ -23,6 +23,7 @@ $(document).ready(function () {
         "Chief Growth Officer & Agile coach",
         "Growth Manager",
         "Product Owner & Business Developer",
+        "Head of QARA",
       ],
     },
     ops: {
