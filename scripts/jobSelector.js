@@ -25,6 +25,7 @@ $(document).ready(function () {
         "Growth Manager",
         "Product Owner & Business Developer",
         "Head of QARA",
+        "Healthcare Product Owner & Quality Assurance"
       ],
     },
     ops: {
@@ -45,6 +46,7 @@ $(document).ready(function () {
         "Directeur commercial",
         "Head of Sales",
         "Chief Sales Officer",
+        "Sales"
       ],
     },
     CTO: {
@@ -58,7 +60,7 @@ $(document).ready(function () {
     },
     CEO: {
       groupName: "CEO",
-      options: ["CEO", "CEO - Cofounder", "Cofounder & UK CEO", "Cofounder"],
+      options: ["CEO", "CEO - Cofounder", "Cofounder & UK CEO", "Cofounder", "Chief of Staff"],
     },
     tribe: {
       groupName: "Tribe",
