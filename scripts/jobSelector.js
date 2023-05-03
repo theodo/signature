@@ -25,6 +25,7 @@ $(document).ready(function () {
         "Growth Manager",
         "Product Owner & Business Developer",
         "Head of QARA",
+        "Healthcare Product Owner & Quality Assurance"
       ],
     },
     ops: {
