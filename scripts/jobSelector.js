@@ -8,6 +8,7 @@ $(document).ready(function () {
         "Data Scientist",
         "Data Engineer",
         "Lead Data Scientist",
+        "Lead Data Engineer",
         "Tech Lead",
         "Engineering Manager",
       ],
