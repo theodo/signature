@@ -46,6 +46,7 @@ $(document).ready(function () {
         "Directeur commercial",
         "Head of Sales",
         "Chief Sales Officer",
+        "Sales"
       ],
     },
     CTO: {
