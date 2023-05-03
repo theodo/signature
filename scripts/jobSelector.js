@@ -58,7 +58,7 @@ $(document).ready(function () {
     },
     CEO: {
       groupName: "CEO",
-      options: ["CEO", "CEO - Cofounder", "Cofounder & UK CEO", "Cofounder"],
+      options: ["CEO", "CEO - Cofounder", "Cofounder & UK CEO", "Cofounder", "Chief of Staff"],
     },
     tribe: {
       groupName: "Tribe",
