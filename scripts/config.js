@@ -80,4 +80,13 @@ var config = {
       country: true
     }
   },
+  M33Foundation: {
+    signatureTemplate: "signatureTemplates/m33-foundation-signature.min.html",
+    lastUpdate: new Date("05/11/2023"), //Month/Day/Year
+    logo: "images/M33FoundationLogo.png",
+    form: {
+      mail: false,
+      country: false
+    }
+  }
 };
