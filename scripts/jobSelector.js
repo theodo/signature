@@ -74,6 +74,18 @@ $(document).ready(function () {
       groupName: "Marketing",
       options: ["Marketing Manager", "Marketing Digital"],
     },
+    foundation:{
+      groupName: "Foundation", 
+      options: [
+        "Head of Communication & Events", 
+        "Head of Green Partnerships", 
+        "Head of Foundation", 
+        "Head of Partnerships", 
+        "Green partnerships", 
+        "Partnerships", 
+        "Communication & Events",
+      ],
+    },
   };
 
   var jobSelector = $("#jobSelector");
