@@ -47,7 +47,8 @@ $(document).ready(function () {
         "Head of Sales",
         "Chief Sales Officer",
         "Sales",
-        "Key Account Manager"
+        "Key Account Manager", 
+        "VP practice retail"
       ],
     },
     CTO: {
