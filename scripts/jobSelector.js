@@ -25,7 +25,8 @@ $(document).ready(function () {
         "Growth Manager",
         "Product Owner & Business Developer",
         "Head of QARA",
-        "Healthcare Product Owner & Quality Assurance"
+        "Healthcare Product Owner & Quality Assurance",
+        "FinOps and Delivery Manager"
       ],
     },
     ops: {
@@ -46,7 +47,9 @@ $(document).ready(function () {
         "Directeur commercial",
         "Head of Sales",
         "Chief Sales Officer",
-        "Sales"
+        "Sales",
+        "Key Account Manager", 
+        "VP practice retail"
       ],
     },
     CTO: {
