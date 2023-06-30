@@ -88,5 +88,14 @@ var config = {
       mail: false,
       country: false
     }
+  },
+  Solona: {
+    signatureTemplate: "signatureTemplates/solona-signature.min.html",
+    lastUpdate: new Date("23/06/2023"), //Month/Day/Year
+    logo: "images/logoSolona.png",
+    form: {
+      mail: true,
+      country: false
+    }
   }
 };
