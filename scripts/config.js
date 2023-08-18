@@ -10,8 +10,8 @@ var config = {
   },
   BAM: {
     signatureTemplate: "signatureTemplates/bam-signature.min.html",
-    lastUpdate: new Date("11/17/2021"),
-    logo: "images/bamLogo.jpg",
+    lastUpdate: new Date("8/18/2023"),
+    logo: "images/bamLogo2.png",
     form: {
       mail: true,
       country: false
