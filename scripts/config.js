@@ -8,6 +8,15 @@ var config = {
       country: true
     }
   },
+  TheodoHealthTech: {
+    signatureTemplate: "signatureTemplates/theodo-healthtech-signature.html",
+    lastUpdate: new Date("06/16/2024"),
+    logo: "images/logoTheodoHealthTech.png",
+    form: {
+      mail: false,
+      country: false
+    }
+  },
   BAM: {
     signatureTemplate: "signatureTemplates/bam-signature.min.html",
     lastUpdate: new Date("8/18/2023"),
