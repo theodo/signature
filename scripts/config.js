@@ -17,6 +17,15 @@ var config = {
       country: false
     }
   },
+  TheodoNew: {
+    signatureTemplate: "signatureTemplates/theodo-new.html",
+    lastUpdate: new Date("06/16/2024"),
+    logo: "images/logoTheodoNew.png",
+    form: {
+      mail: false,
+      country: false
+    }
+  },
   BAM: {
     signatureTemplate: "signatureTemplates/bam-signature.min.html",
     lastUpdate: new Date("8/18/2023"),
