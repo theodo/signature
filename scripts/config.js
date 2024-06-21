@@ -1,11 +1,11 @@
 var config = {
   TheodoNew: {
-    signatureTemplate: "signatureTemplates/theodo.html",
+    signatureTemplate: "signatureTemplates/theodo-signature.html",
     lastUpdate: new Date("06/16/2024"),
     logo: "images/logoTheodoNew.png",
     form: {
       mail: false,
-      country: false
+      country: true
     }
   },
   TheodoHealthTech: {
@@ -14,7 +14,7 @@ var config = {
     logo: "images/logoTheodoHealthTech.png",
     form: {
       mail: false,
-      country: false
+      country: true
     }
   },
   Aleios: {

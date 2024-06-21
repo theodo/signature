@@ -6,13 +6,13 @@ $(document).ready(function() {
 
   var signatureFrTel = $('.signatureFrTel');
   var signatureUkTel = $('.signatureUkTel');
-  var signatureMaTel = $('#signatureMaTel');
-  var signatureUsTel = $('#signatureUsTel');
+  var signatureMaTel = $('.signatureMaTel');
+  var signatureUsTel = $('.signatureUsTel');
 
-  var signatureFrTelGroup = $('#signatureFrTelGroup');
-  var signatureUkTelGroup = $('#signatureUkTelGroup');
-  var signatureMaTelGroup = $('#signatureMaTelGroup');
-  var signatureUsTelGroup = $('#signatureUsTelGroup');
+  var signatureFrTelGroup = $('.signatureFrTelGroup');
+  var signatureUkTelGroup = $('.signatureUkTelGroup');
+  var signatureMaTelGroup = $('.signatureMaTelGroup');
+  var signatureUsTelGroup = $('.signatureUsTelGroup');
 
   function initTelephones() {
     var frTelValue = '6 12 34 56 78';
@@ -80,7 +80,7 @@ $(document).ready(function() {
 
     inputNode.val(telephoneToUse);
     signatureNode.each(function() {
-      $(this).attr("href", `tel:+${internationalCode}${telNoSpace}`)
+      // $(this).attr("href", `tel:+${internationalCode}${telNoSpace}`)
       $(this).text(`+${internationalCode} ${telephoneToUse}`);
     });
     if (telNoSpace.length > 0) {
@@ -116,11 +116,9 @@ $(document).ready(function() {
       countryNodes.push(signatureUsTelGroup.find('.country'));
     }
 
-    $("#theodo-signature .country").addClass('hidden');
-    if (countryNodes.length > 1) {
-      for (var c in countryNodes) {
-        countryNodes[c].removeClass('hidden');
-      }
+    //$("#theodo-signature .country").addClass('hidden');
+    for (var c in countryNodes) {
+      countryNodes[c].removeClass('hidden');
     }
-  }
+    }
 });
