@@ -23,6 +23,13 @@ NB: it can be usefull to change the config to point to the unminified template f
 - you most likely want to **use png images with a transparent background** (on mac os, there is now a dark theme that can make your signature look bad if it has a white background)
 - to avoid playing with margins, be sure to **use images whithout margins**
 
+
+## Deploy
+
+Deployment is done automatically after merging a Pull Request on the master branch. 
+
+**Warning**: the minification process is not done during deployment. Please ensure to minify and commit the .min.html files.
+
 ## Minify signature templates
 
 - `npm install html-minifier-cli -g`
