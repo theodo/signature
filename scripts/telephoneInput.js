@@ -81,7 +81,7 @@ $(document).ready(function() {
     inputNode.val(telephoneToUse);
     signatureNode.each(function() {
       $(this).attr("href", `tel:+${internationalCode}${telNoSpace}`)
-      $(this).text(`+${internationalCode} ${telephoneToUse}`);
+      $(this).text(`M +${internationalCode} ${telephoneToUse}`);
     });
     if (telNoSpace.length > 0) {
       signatureGroupNode.removeClass('hidden');
