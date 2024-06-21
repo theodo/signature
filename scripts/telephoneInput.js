@@ -81,7 +81,7 @@ $(document).ready(function() {
     inputNode.val(telephoneToUse);
     signatureNode.each(function() {
       $(this).attr("href", `tel:+${internationalCode}${telNoSpace}`)
-      $(this).text(`M +${internationalCode} ${telephoneToUse}`);
+      $(this).text(`+${internationalCode} ${telephoneToUse}`);
     });
     if (telNoSpace.length > 0) {
       signatureGroupNode.removeClass('hidden');
@@ -111,6 +111,9 @@ $(document).ready(function() {
     }
     if (!signatureMaTelGroup.hasClass('hidden')) {
       countryNodes.push(signatureMaTelGroup.find('.country'));
+    }
+    if (!signatureUsTelGroup.hasClass('hidden')) {
+      countryNodes.push(signatureUsTelGroup.find('.country'));
     }
 
     $("#theodo-signature .country").addClass('hidden');

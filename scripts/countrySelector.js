@@ -26,6 +26,7 @@ $(document).ready(function() {
     var frTel = $('#signatureFrTelGroup');
     var ukTel = $('#signatureUkTelGroup');
     var usTel = $('#signatureUsTelGroup');
+    var maTel = $('#signatureMaTelGroup');
 
     if (country == 'UK') {
       ukAddress.removeClass('hidden');
@@ -33,7 +34,7 @@ $(document).ready(function() {
       frenchLyonAddress.addClass('hidden');
       frenchNantesAddress.addClass('hidden');
       usAddress.addClass('hidden');
-      logo.attr('href', 'https://www.theodo.co.uk');
+      logo.attr('href', 'https://www.theodo.com/');
       //reorder tels
       ukTel.insertBefore($("[id$=TelGroup]").first());
     } else if (country == 'US') {
@@ -45,31 +46,31 @@ $(document).ready(function() {
       logo.attr('href', 'https://www.theodo.com/');
       //reorder tels
       usTel.insertBefore($("[id$=TelGroup]").first());
-    } else if(country == 'FR-Lyon'){
+    } else if (country == 'MA') {
+      ukAddress.addClass('hidden');
+      frenchParisAddress.addClass('hidden');
+      frenchLyonAddress.addClass('hidden');
+      frenchNantesAddress.addClass('hidden');
+      usAddress.removeClass('hidden');
+      logo.attr('href', 'https://www.theodo.com/');
+      //reorder tels
+      maTel.insertBefore($("[id$=TelGroup]").first());
+    } else if(country == 'FR'){
       ukAddress.addClass('hidden');
       frenchParisAddress.addClass('hidden');
       frenchLyonAddress.removeClass('hidden');
       frenchNantesAddress.addClass('hidden');
       usAddress.addClass('hidden');
-      logo.attr('href', 'https://www.theodo.fr');
+      logo.attr('href', 'https://www.theodo.com');
       //reorder tels
       frTel.insertBefore($("[id$=TelGroup]").first());
-    } else if(country == 'FR-Nantes'){
-      ukAddress.addClass('hidden');
-      frenchParisAddress.addClass('hidden');
-      frenchLyonAddress.addClass('hidden');
-      frenchNantesAddress.removeClass('hidden');
-      usAddress.addClass('hidden');
-      logo.attr('href', 'https://www.theodo.fr');
-      //reorder tels
-      frTel.insertBefore($("[id$=TelGroup]").first());
-    }else{
+    } else {
       ukAddress.addClass('hidden');
       frenchParisAddress.removeClass('hidden');
       frenchLyonAddress.addClass('hidden');
       frenchNantesAddress.addClass('hidden');
       usAddress.addClass('hidden');
-      logo.attr('href', 'https://www.theodo.fr');
+      logo.attr('href', 'https://www.theodo.com');
       //reorder tels
       frTel.insertBefore($("[id$=TelGroup]").first());
     }
