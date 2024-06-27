@@ -1,74 +1,65 @@
 var config = {
   Theodo: {
     signatureTemplate: "signatureTemplates/theodo-signature.min.html",
-    lastUpdate: new Date("01/16/2024"), //Month/Day/Year
-    logo: "images/logoTheodo.png",
+    lastUpdate: new Date("06/16/2024"),
+    logo: "images/logoTheodoNew.png",
     form: {
       mail: false,
       country: true
     }
   },
-  BAM: {
-    signatureTemplate: "signatureTemplates/bam-signature.min.html",
-    lastUpdate: new Date("8/18/2023"),
-    logo: "images/bamLogo2.png",
-    form: {
-      mail: true,
-      country: false
-    }
-  },
-  M33: {
-    signatureTemplate: "signatureTemplates/m33-signature.min.html",
-    lastUpdate: new Date("5/6/2018"),
-    logo: "images/M33Logo.png",
+  TheodoHealthTech: {
+    signatureTemplate: "signatureTemplates/theodo-healthtech-signature.min.html",
+    lastUpdate: new Date("06/16/2024"),
+    logo: "images/logoTheodoHealthTech.png",
     form: {
       mail: false,
-      country: false
+      country: true
     }
   },
-  Padok: {
-    signatureTemplate: "signatureTemplates/padok-signature.min.html",
-    lastUpdate: new Date("11/17/2021"),
-    logo: "images/logoPadok.png",
+  TheodoDataAi: {
+    signatureTemplate: "signatureTemplates/theodo-data-ai-signature.min.html",
+    lastUpdate: new Date("06/16/2024"),
+    logo: "images/logoTheodoDataAi.png",
     form: {
       mail: false,
-      country: false
+      country: true
     }
   },
-  Sicara: {
-    signatureTemplate: "signatureTemplates/sicara-signature.min.html",
-    lastUpdate: new Date("06/11/2019"),
-    logo: "images/logoSicara.png",
+  TheodoFinTech: {
+    signatureTemplate: "signatureTemplates/theodo-fintech-signature.min.html",
+    lastUpdate: new Date("06/16/2024"),
+    logo: "images/logoTheodoFinTech.png",
     form: {
       mail: false,
-      country: false
+      country: true
     }
   },
-  Sipios: {
-    signatureTemplate: "signatureTemplates/sipios-signature.min.html",
-    lastUpdate: new Date("11/02/2020"),
-    logo: "images/logo-sipios.png",
+  TheodoCloud: {
+    signatureTemplate: "signatureTemplates/theodo-cloud-signature.min.html",
+    lastUpdate: new Date("06/16/2024"),
+    logo: "images/logoTheodoCloud.png",
     form: {
       mail: false,
-      country: false
+      country: true
     }
   },
-  Hokla: {
-    signatureTemplate: "signatureTemplates/hokla-signature.min.html",
-    lastUpdate: new Date("11/15/2021"), //Month/Day/Year
-    logo: "images/logoHokla.png",
+  TheodoApps: {
+    signatureTemplate: "signatureTemplates/theodo-apps-signature.min.html",
+    lastUpdate: new Date("06/16/2024"),
+    logo: "images/logoTheodoApps.png",
     form: {
       mail: false,
-      country: false
+      country: true
     }
   },
-  Kumo: {
-    signatureTemplate: "signatureTemplates/kumo-signature.min.html",
-    lastUpdate: new Date("07/23/2021"), //Month/Day/Year
-    logo: "images/logoKumo.png",
+  TheodoGovTech: {
+    signatureTemplate: "signatureTemplates/theodo-govtech-signature.min.html",
+    lastUpdate: new Date("06/16/2024"),
+    logo: "images/logoTheodoGovTech.png",
     form: {
       mail: false,
-      country: false
+      country: true
     }
   },
   Aleios: {
@@ -80,22 +71,4 @@ var config = {
       country: true
     }
   },
-  M33Foundation: {
-    signatureTemplate: "signatureTemplates/m33-foundation-signature.min.html",
-    lastUpdate: new Date("05/11/2023"), //Month/Day/Year
-    logo: "images/M33FoundationLogo.png",
-    form: {
-      mail: false,
-      country: false
-    }
-  },
-  Solona: {
-    signatureTemplate: "signatureTemplates/solona-signature.min.html",
-    lastUpdate: new Date("23/06/2023"), //Month/Day/Year
-    logo: "images/logoSolona.png",
-    form: {
-      mail: true,
-      country: false
-    }
-  }
 };
