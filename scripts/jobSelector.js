@@ -11,6 +11,7 @@ $(document).ready(function () {
         "Lead Data Engineer",
         "Tech Lead",
         "Engineering Manager",
+        "Site Reliability Engineer"
       ],
     },
     ux: {
@@ -25,8 +26,11 @@ $(document).ready(function () {
         "Growth Manager",
         "Product Owner & Business Developer",
         "Head of QARA",
-        "Healthcare Product Owner & Quality Assurance",
-        "FinOps and Delivery Manager"
+        "Head of QARA & DPO",
+        "QARA Specialist",
+        "Healthcare Product Owner & QARA",
+        "FinOps and Delivery Manager", 
+        "Product & Delivery Consultant"
       ],
     },
     ops: {
@@ -63,7 +67,7 @@ $(document).ready(function () {
     },
     CEO: {
       groupName: "CEO",
-      options: ["CEO", "CEO - Cofounder", "Cofounder & UK CEO", "Cofounder", "Chief of Staff"],
+      options: ["CEO", "CEO - Cofounder", "Cofounder & UK CEO", "Cofounder", "Chief of Staff", 'Group Partner'],
     },
     tribe: {
       groupName: "Tribe",
@@ -89,6 +93,12 @@ $(document).ready(function () {
         "Communication & Events",
       ],
     },
+    staffing: {
+      groupName: 'Staffing', 
+      options: [
+        "Staffing",
+      ],
+    }
   };
 
   var jobSelector = $("#jobSelector");
